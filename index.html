@@ -124,17 +124,17 @@
 		</header>
 
 		<main class="relative z-10">
-			<section id="accueil" class="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pb-28 lg:pt-40">
-				<div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
-					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none">
-						<h1 class="max-w-4xl text-4xl font-black leading-tight sm:text-6xl lg:text-7xl">
+			<section id="accueil" class="relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-28 lg:pt-40">
+				<div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
+					<div class="reveal order-2 opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none lg:order-1">
+						<h1 class="max-w-4xl text-3xl font-black leading-tight sm:text-6xl lg:text-7xl">
 							Précision, fiabilité et passion pour votre auto
 						</h1>
-						<p class="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+						<p class="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:mt-6 sm:text-lg sm:leading-8">
 							Garage indépendant à Maubourguet, Mav<span class="text-racing">.</span> RS Auto accompagne l’entretien, le diagnostic et
 							l’optimisation de votre véhicule avec une approche soignée et passionnée.
 						</p>
-						<div class="mt-9 flex flex-col gap-4 sm:flex-row">
+						<div class="mt-8 flex flex-col gap-4 sm:mt-9 sm:flex-row">
 							<a
 								href="#contact"
 								class="rounded-full bg-racing px-7 py-4 text-center font-bold text-white shadow-glow transition hover:bg-red-600"
@@ -149,13 +149,13 @@
 							</a>
 						</div>
 					</div>
-					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none relative">
+					<div class="reveal order-1 opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none relative mx-auto w-full max-w-sm lg:order-2 lg:max-w-none">
 						<div class="absolute -inset-8 rounded-full bg-racing/25 blur-3xl"></div>
 						<div class="relative overflow-hidden rounded-lg border border-white/15 bg-[#111111] p-1 shadow-soft">
-							<div class="relative aspect-[4/3] rounded-md border border-white/10 bg-[#111111] p-6">
+							<div class="relative aspect-square rounded-md border border-white/10 bg-[#111111] p-4 sm:aspect-[4/3] sm:p-6">
 								<div class="flex h-full flex-col items-center justify-center">
 									<div class="relative font-[Poppins,sans-serif]">
-										<svg class="block" width="349" height="266" viewBox="0 0 349 266" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<svg class="block h-auto w-full max-w-[260px] sm:max-w-[349px]" width="349" height="266" viewBox="0 0 349 266" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
 												id="meter-bg-bar" class="animate-dash motion-reduce:animate-none" stroke-dasharray="615"
 												d="M50.8884 250C37.0172 227.815 29 201.594 29 173.5C29 93.6949 93.6949 29 173.5 29C253.305 29 318 93.6949 318 173.5C318 201.594 309.983 227.815 296.112 250"
@@ -227,10 +227,10 @@
 												fill="#87888C"
 											/>
 										</svg>
-										<h5 id="speed" class="absolute left-1/2 top-[63%] z-[1] m-0 -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold leading-none text-white">100</h5>
+										<h5 id="speed" class="absolute left-1/2 top-[63%] z-[1] m-0 -translate-x-1/2 -translate-y-1/2 text-3xl font-semibold leading-none text-white sm:text-4xl">100</h5>
 									</div>
 									<div class="mt-6 text-center">
-										<p class="text-3xl font-black tracking-wide text-white">Mav<span class="text-racing">.</span> RS Auto</p>
+										<p class="text-2xl font-black tracking-wide text-white sm:text-3xl">Mav<span class="text-racing">.</span> RS Auto</p>
 										<p class="mt-1 text-sm font-bold uppercase tracking-[0.22em] text-zinc-400">Garage indépendant</p>
 									</div>
 								</div>
@@ -528,7 +528,9 @@
 					</p>
 				</div>
 			</div>
-			<p class="mx-auto mt-8 max-w-7xl text-sm text-zinc-500">© 2026 Mav<span class="text-racing">.</span> RS Auto. Tous droits réservés.</p>
+			<p class="mx-auto mt-8 max-w-7xl text-sm text-zinc-500">
+				© 2026 Mav<span class="text-racing">.</span> RS Auto. Tous droits réservés. Site par Hugo Eribon.
+			</p>
 		</footer>
 
 		<script>
