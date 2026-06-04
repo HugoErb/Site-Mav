@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth motion-reduce:scroll-auto">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,18 +34,25 @@
 							glow: "0 0 40px rgba(225,29,46,.25)",
 							soft: "0 24px 80px rgba(0,0,0,.35)",
 						},
+						backgroundImage: {
+							site:
+								"radial-gradient(circle at 75% 8%, rgba(25, 183, 255, 0.18), transparent 34rem), radial-gradient(circle at 10% 20%, rgba(225, 29, 46, 0.18), transparent 30rem), radial-gradient(circle at 88% 48%, rgba(225, 29, 46, 0.13), transparent 32rem), radial-gradient(circle at 18% 78%, rgba(225, 29, 46, 0.16), transparent 36rem)",
+						},
+						keyframes: {
+							dash: {
+								"0%, 100%": { strokeDashoffset: "615" },
+								"25%, 75%": { strokeDashoffset: "0" },
+								"50%": { strokeDashoffset: "307.5" },
+							},
+						},
+						animation: {
+							dash: "dash 10s linear forwards infinite",
+						},
 					},
 				},
 			};
 		</script>
 		<style>
-			body {
-				background:
-					radial-gradient(circle at 75% 8%, rgba(25, 183, 255, 0.18), transparent 34rem),
-					radial-gradient(circle at 10% 20%, rgba(225, 29, 46, 0.18), transparent 30rem),
-					radial-gradient(circle at 88% 48%, rgba(225, 29, 46, 0.13), transparent 32rem),
-					radial-gradient(circle at 18% 78%, rgba(225, 29, 46, 0.16), transparent 36rem), #050608;
-			}
 			.noise::before {
 				content: "";
 				position: fixed;
@@ -58,68 +65,6 @@
 				background-size: 38px 38px;
 				mask-image: linear-gradient(to bottom, black, transparent 78%);
 				z-index: 0;
-			}
-			.reveal {
-				opacity: 0;
-				transform: translateY(22px);
-				transition:
-					opacity 0.7s ease,
-					transform 0.7s ease;
-			}
-			.reveal.is-visible {
-				opacity: 1;
-				transform: translateY(0);
-			}
-			.svg-container {
-				position: relative;
-				font-family: "Poppins", sans-serif;
-			}
-			.svg-container svg {
-				display: block;
-			}
-			#speed {
-				color: white;
-				font-size: 36px;
-				line-height: 100%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				position: absolute;
-				top: 63%;
-				z-index: 1;
-				margin: 0;
-				font-weight: 600;
-			}
-			#meter-bg-bar {
-				animation: dash 10s linear forwards infinite;
-				stroke-dasharray: 615;
-			}
-			@keyframes dash {
-				0%,
-				100% {
-					stroke-dashoffset: 615;
-				}
-				25% {
-					stroke-dashoffset: 0;
-				}
-				50% {
-					stroke-dashoffset: 307.5;
-				}
-				75% {
-					stroke-dashoffset: 0;
-				}
-			}
-			@media (prefers-reduced-motion: reduce) {
-				.reveal {
-					opacity: 1;
-					transform: none;
-					transition: none;
-				}
-				#meter-bg-bar {
-					animation: none;
-				}
-				* {
-					scroll-behavior: auto !important;
-				}
 			}
 		</style>
 		<script type="application/ld+json">
@@ -143,7 +88,7 @@
 			}
 		</script>
 	</head>
-	<body class="noise text-white antialiased">
+	<body class="noise bg-ink bg-site text-white antialiased">
 		<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
 			<nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Navigation principale">
 				<a href="#accueil" class="text-xl font-black tracking-wide">
@@ -185,7 +130,7 @@
 		<main class="relative z-10">
 			<section id="accueil" class="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pb-28 lg:pt-40">
 				<div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
-					<div class="reveal">
+					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none">
 						<h1 class="max-w-4xl text-4xl font-black leading-tight sm:text-6xl lg:text-7xl">
 							Performance, précision et fiabilité pour votre auto
 						</h1>
@@ -208,15 +153,15 @@
 							</a>
 						</div>
 					</div>
-					<div class="reveal relative">
+					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none relative">
 						<div class="absolute -inset-8 rounded-full bg-racing/25 blur-3xl"></div>
 						<div class="relative overflow-hidden rounded-lg border border-white/15 bg-[#111111] p-1 shadow-soft">
 							<div class="relative aspect-[4/3] rounded-md border border-white/10 bg-[#111111] p-6">
 								<div class="flex h-full flex-col items-center justify-center">
-									<div class="svg-container">
-										<svg width="349" height="266" viewBox="0 0 349 266" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<div class="relative font-[Poppins,sans-serif]">
+										<svg class="block" width="349" height="266" viewBox="0 0 349 266" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
-												id="meter-bg-bar"
+												id="meter-bg-bar" class="animate-dash motion-reduce:animate-none" stroke-dasharray="615"
 												d="M50.8884 250C37.0172 227.815 29 201.594 29 173.5C29 93.6949 93.6949 29 173.5 29C253.305 29 318 93.6949 318 173.5C318 201.594 309.983 227.815 296.112 250"
 												stroke="#e11d2e"
 												stroke-width="57"
@@ -286,7 +231,7 @@
 												fill="#87888C"
 											/>
 										</svg>
-										<h5 id="speed">100</h5>
+										<h5 id="speed" class="absolute left-1/2 top-[63%] z-[1] m-0 -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold leading-none text-white">100</h5>
 									</div>
 									<div class="mt-6 text-center">
 										<p class="text-3xl font-black tracking-wide text-white">
@@ -305,13 +250,13 @@
 
 			<section id="services" class="px-4 py-20 sm:px-6 lg:px-8">
 				<div class="mx-auto max-w-7xl">
-					<div class="reveal max-w-3xl">
+					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none max-w-3xl">
 						<h2 class="text-3xl font-black sm:text-5xl">Services</h2>
 						<p class="mt-4 text-zinc-300">Des services clairs pour entretenir, diagnostiquer et fiabiliser votre véhicule.</p>
 					</div>
 					<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:car-wrench" aria-hidden="true"></iconify-icon>
@@ -322,7 +267,7 @@
 							</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:engine" aria-hidden="true"></iconify-icon>
@@ -333,7 +278,7 @@
 							</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:flash" aria-hidden="true"></iconify-icon>
@@ -344,7 +289,7 @@
 							</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:car-key" aria-hidden="true"></iconify-icon>
@@ -353,7 +298,7 @@
 							<p class="mt-3 text-sm leading-6 text-zinc-400">Achat et vente de véhicules d’occasion, de l’épave au véhicule récent.</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:tire" aria-hidden="true"></iconify-icon>
@@ -364,7 +309,7 @@
 							</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:magnify-scan" aria-hidden="true"></iconify-icon>
@@ -375,7 +320,7 @@
 							</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:clipboard-search" aria-hidden="true"></iconify-icon>
@@ -386,7 +331,7 @@
 							</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:speedometer" aria-hidden="true"></iconify-icon>
@@ -397,7 +342,7 @@
 							</p>
 						</article>
 						<article
-							class="reveal rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
+							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
 						>
 							<div class="flex items-center gap-3">
 								<iconify-icon class="text-2xl text-racing" icon="mdi:tow-truck" aria-hidden="true"></iconify-icon>
@@ -413,14 +358,14 @@
 
 			<section class="px-4 py-20 sm:px-6 lg:px-8">
 				<div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr]">
-					<div class="reveal"><h2 class="text-3xl font-black sm:text-5xl">Pourquoi choisir Mav. RS ?</h2></div>
+					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none"><h2 class="text-3xl font-black sm:text-5xl">Pourquoi choisir Mav. RS ?</h2></div>
 					<div class="grid gap-4 sm:grid-cols-2">
-						<p class="reveal rounded-lg border border-line bg-white/[.04] p-5">
+						<p class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-5">
 							Garage indépendant à Maubourguet et relation directe avec le garagiste.
 						</p>
-						<p class="reveal rounded-lg border border-line bg-white/[.04] p-5">Conseils clairs et adaptés à votre véhicule.</p>
-						<p class="reveal rounded-lg border border-line bg-white/[.04] p-5">Travail soigné, conseils précis et suivi sérieux.</p>
-						<p class="reveal rounded-lg border border-line bg-white/[.04] p-5">Passion automobile et approche performance fiable.</p>
+						<p class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-5">Conseils clairs et adaptés à votre véhicule.</p>
+						<p class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-5">Travail soigné, conseils précis et suivi sérieux.</p>
+						<p class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-5">Passion automobile et approche performance fiable.</p>
 					</div>
 				</div>
 			</section>
@@ -429,7 +374,7 @@
 				<div
 					class="mx-auto max-w-5xl rounded-lg border border-line bg-gradient-to-br from-white/[.07] to-white/[.02] p-8 shadow-soft sm:p-12"
 				>
-					<div class="reveal">
+					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none">
 						<h2 class="text-3xl font-black sm:text-5xl">À propos de Mav. RS</h2>
 						<p class="mt-6 text-lg leading-8 text-zinc-300">
 							Mav. RS est un garage indépendant situé à Maubourguet. L’approche combine passion automobile, précision mécanique et
@@ -448,7 +393,7 @@
 				<span id="contact" class="block scroll-mt-28"></span>
 				<div class="mx-auto max-w-7xl">
 					<div class="grid gap-8 lg:grid-cols-2">
-						<div class="reveal flex h-full flex-col justify-center">
+						<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none flex h-full flex-col justify-center">
 							<h2 class="text-3xl font-black sm:text-5xl">Localisation et contact</h2>
 							<div class="mt-8 grid gap-4 text-zinc-300">
 								<p>
@@ -479,7 +424,7 @@
 								Voir l’itinéraire
 							</a>
 						</div>
-						<div class="reveal overflow-hidden rounded-lg border border-line bg-panel">
+						<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none overflow-hidden rounded-lg border border-line bg-panel">
 							<iframe
 								title="Carte Google Maps de Maubourguet"
 								src="https://www.google.com/maps?q=65700%20Maubourguet&output=embed"
@@ -494,21 +439,21 @@
 
 			<section class="px-4 py-20 sm:px-6 lg:px-8">
 				<div class="mx-auto max-w-7xl">
-					<h2 class="reveal text-3xl font-black sm:text-5xl">Avis clients</h2>
+					<h2 class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none text-3xl font-black sm:text-5xl">Avis clients</h2>
 					<div class="mt-10 grid gap-5 md:grid-cols-3">
-						<figure class="reveal rounded-lg border border-line bg-white/[.04] p-6">
+						<figure class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6">
 							<blockquote class="text-zinc-300">
 								Diagnostic clair et explications simples. On sent le sérieux et la passion auto, sans discours commercial inutile.
 							</blockquote>
 							<figcaption class="mt-5 font-bold">Client Mav. RS</figcaption>
 						</figure>
-						<figure class="reveal rounded-lg border border-line bg-white/[.04] p-6">
+						<figure class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6">
 							<blockquote class="text-zinc-300">
 								Travail propre sur mon véhicule, avec transparence sur ce qui était nécessaire et ce qui pouvait attendre.
 							</blockquote>
 							<figcaption class="mt-5 font-bold">Client Mav. RS</figcaption>
 						</figure>
-						<figure class="reveal rounded-lg border border-line bg-white/[.04] p-6">
+						<figure class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6">
 							<blockquote class="text-zinc-300">
 								Très bon contact, conseils adaptés et soin visible apporté à la voiture. Une vraie approche de passionné.
 							</blockquote>
@@ -583,7 +528,8 @@
 			const observer = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((entry) => {
-						if (entry.isIntersecting) entry.target.classList.add("is-visible");
+						if (entry.isIntersecting) entry.target.classList.remove("opacity-0", "translate-y-[22px]");
+						if (entry.isIntersecting) entry.target.classList.add("opacity-100", "translate-y-0");
 					});
 				},
 				{ threshold: 0.12 },
