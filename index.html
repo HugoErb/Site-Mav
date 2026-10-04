@@ -1,5 +1,5 @@
-﻿<!doctype html>
-<html lang="fr" class="scroll-smooth motion-reduce:scroll-auto">
+<!doctype html>
+<html lang="fr" class="no-js">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,621 +10,2491 @@
 		/>
 		<meta name="robots" content="index, follow" />
 		<meta name="theme-color" content="#050608" />
+		<link rel="canonical" href="https://hugoerb.github.io/Site-Mav/" />
+		<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+		<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Mav. RS Auto" />
+		<meta property="og:locale" content="fr_FR" />
 		<meta property="og:title" content="Mav. RS Auto | Garage indépendant automobile à Maubourguet" />
 		<meta
 			property="og:description"
 			content="Garage indépendant à Maubourguet pour entretien, diagnostic, réparation automobile et suivi de véhicules passion."
 		/>
-		<meta property="og:url" content="https://hugoerb.github.io/Site-Mav/#accueil" />
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-		<script>
-			tailwind.config = {
-				theme: {
-					extend: {
-						colors: {
-							ink: "#050608",
-							panel: "#111318",
-							line: "rgba(255,255,255,.12)",
-							racing: "#e11d2e",
-							electric: "#19b7ff",
-						},
-						boxShadow: {
-							glow: "0 0 40px rgba(225,29,46,.25)",
-							soft: "0 24px 80px rgba(0,0,0,.35)",
-						},
-						backgroundImage: {
-							site:
-								"radial-gradient(circle at 75% 8%, rgba(25, 183, 255, 0.18), transparent 34rem), radial-gradient(circle at 10% 20%, rgba(225, 29, 46, 0.18), transparent 30rem), radial-gradient(circle at 88% 48%, rgba(225, 29, 46, 0.13), transparent 32rem), radial-gradient(circle at 18% 78%, rgba(225, 29, 46, 0.16), transparent 36rem)",
-						},
-						keyframes: {
-							dash: {
-								"0%, 100%": { strokeDashoffset: "615" },
-								"25%, 75%": { strokeDashoffset: "0" },
-								"50%": { strokeDashoffset: "307.5" },
-							},
-						},
-						animation: {
-							dash: "dash 10s linear forwards infinite",
-						},
-					},
-				},
-			};
-		</script>
+		<meta property="og:url" content="https://hugoerb.github.io/Site-Mav/" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Mav. RS Auto | Garage indépendant automobile à Maubourguet" />
+		<meta
+			name="twitter:description"
+			content="Garage indépendant à Maubourguet pour entretien, diagnostic, réparation automobile et suivi de véhicules passion."
+		/>
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q8EsJaRE-NWIDdgffTTtDRZ9xdp.woff2" />
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2" />
 		<style>
-			.noise::before {
-				content: "";
-				position: fixed;
-				inset: 0;
-				pointer-events: none;
-				opacity: 0.055;
-				background-image:
-					linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
-					linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
-				background-size: 38px 38px;
-				mask-image: linear-gradient(to bottom, black, transparent 78%);
-				z-index: 0;
+			@layer theme, base, components, utilities;
+
+			/* Google Fonts files (latin subset), declared inline to avoid a render-blocking stylesheet */
+			@font-face {
+				font-family: "Archivo";
+				font-style: normal;
+				font-weight: 800;
+				font-stretch: 125%;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/archivo/v25/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q8EsJaRE-NWIDdgffTTtDRZ9xdp.woff2) format("woff2");
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+			@font-face {
+				font-family: "Archivo";
+				font-style: normal;
+				font-weight: 400 700;
+				font-stretch: 100%;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format("woff2");
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+			@font-face {
+				font-family: "JetBrains Mono";
+				font-style: normal;
+				font-weight: 500;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTOlOV.woff2) format("woff2");
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 			}
 
-			@media (min-width: 630px) and (max-width: 1150px) {
-				.hero-grid {
-					grid-template-columns: 1fr !important;
-				}
 
-				.hero-copy {
-					order: 2 !important;
-				}
+			/* ------------------------------------------------------------------ tokens */
+			:root {
+				--ink: #050608;
+				--panel: #111318;
+				--line: rgba(255, 255, 255, 0.12);
+				--racing: #e11d2e;
+				--electric: #19b7ff;
+				--text: #eef0f3;
+				--soft: #c9ccd3;
+				--muted: #a1a1aa;
+				--tile: #0b0d11;
+				--f-display: "Archivo", "Arial Black", system-ui, sans-serif;
+				--f-body: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+				--f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+				--gut: clamp(16px, 4vw, 48px);
+				--max: 1360px;
+				--hdr: 76px;
+				--ease: cubic-bezier(0.16, 1, 0.3, 1);
+				--ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+				color-scheme: dark;
+			}
 
-				.hero-meter {
-					order: 1 !important;
-					max-width: 28rem !important;
+			@layer base {
+				*,
+				::before,
+				::after {
+					box-sizing: border-box;
 				}
-
-				.hero-meter-box {
-					aspect-ratio: 9 / 8 !important;
+				html {
+					scroll-padding-top: 72px;
+					-webkit-text-size-adjust: 100%;
+				}
+				@media (prefers-reduced-motion: no-preference) {
+					html {
+						scroll-behavior: smooth;
+					}
+				}
+				body {
+					margin: 0;
+					background: var(--ink);
+					color: var(--text);
+					font-family: var(--f-body);
+					font-stretch: 100%;
+					font-size: 1rem;
+					line-height: 1.6;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					overflow-x: clip;
+				}
+				h1,
+				h2,
+				h3,
+				p,
+				figure,
+				blockquote,
+				dl,
+				dd {
+					margin: 0;
+				}
+				a {
+					color: inherit;
+				}
+				img,
+				svg {
+					display: block;
+					max-width: 100%;
+				}
+				:focus-visible {
+					outline: 2px solid var(--electric);
+					outline-offset: 3px;
+				}
+				::selection {
+					background: var(--racing);
+					color: #fff;
 				}
 			}
 
-			@media (max-width: 1150px) {
-				.hero-section {
-					padding-top: 5.75rem !important;
+			@layer components {
+				/* ---------------------------------------------------------- atmosphere */
+				body::before,
+				body::after {
+					content: "";
+					position: fixed;
+					inset: 0;
+					pointer-events: none;
+					z-index: -1;
+				}
+				/* headlight glows */
+				body::before {
+					background:
+						radial-gradient(ellipse 46rem 34rem at 82% 6%, rgba(225, 29, 46, 0.16), transparent 70%),
+						radial-gradient(ellipse 30rem 26rem at 4% 30%, rgba(225, 29, 46, 0.1), transparent 70%),
+						radial-gradient(ellipse 36rem 24rem at 96% 70%, rgba(25, 183, 255, 0.05), transparent 70%),
+						radial-gradient(ellipse 40rem 30rem at 10% 96%, rgba(225, 29, 46, 0.09), transparent 70%);
+				}
+				/* blueprint grid */
+				body::after {
+					background-image:
+						linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+						linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+						linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+						linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+					background-size:
+						40px 40px,
+						40px 40px,
+						8px 8px,
+						8px 8px;
+					mask-image: radial-gradient(ellipse 120% 90% at 50% 30%, #000 30%, transparent 85%);
+				}
+
+				.sr-only {
+					position: absolute;
+					width: 1px;
+					height: 1px;
+					padding: 0;
+					margin: -1px;
+					overflow: hidden;
+					clip: rect(0, 0, 0, 0);
+					white-space: nowrap;
+					border-width: 0;
+				}
+				.sprite {
+					position: absolute;
+					width: 0;
+					height: 0;
+					overflow: hidden;
+				}
+
+				.wrap {
+					width: 100%;
+					max-width: var(--max);
+					margin-inline: auto;
+					padding-inline: var(--gut);
+				}
+
+				/* ---------------------------------------------------------- type */
+				.display {
+					font-family: var(--f-display);
+					font-weight: 800;
+					font-stretch: 125%;
+					letter-spacing: -0.02em;
+					line-height: 0.95;
+					text-wrap: balance;
+				}
+				.tl {
+					font-family: var(--f-mono);
+					font-weight: 500;
+					font-size: 0.75rem;
+					line-height: 1.3;
+					letter-spacing: 0.06em;
+					color: var(--muted);
+				}
+				.tl--mark {
+					display: flex;
+					align-items: center;
+					gap: 0.6rem;
+					color: var(--soft);
+				}
+				.tl--mark::before {
+					content: "";
+					width: 22px;
+					height: 6px;
+					background: linear-gradient(90deg, transparent, var(--racing));
+					transform: skewX(-14deg);
+				}
+				.dot {
+					color: var(--racing);
+				}
+
+				.skip {
+					position: fixed;
+					left: 12px;
+					top: 12px;
+					z-index: 100;
+					padding: 0.7rem 1rem;
+					background: #fff;
+					color: var(--ink);
+					font-weight: 700;
+					text-decoration: none;
+					transform: translateY(-160%);
+				}
+				.skip:focus-visible {
+					transform: none;
+				}
+
+				/* ---------------------------------------------------------- buttons */
+				.btn {
+					--bg: transparent;
+					--bd: var(--line);
+					position: relative;
+					isolation: isolate;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.6rem;
+					min-height: 52px;
+					padding: 0 1.75rem;
+					color: #fff;
+					font-family: var(--f-body);
+					font-weight: 700;
+					font-size: 1rem;
+					line-height: 1.1;
+					text-decoration: none;
+					text-align: center;
+					overflow: visible;
+				}
+				.btn::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: -1;
+					background: var(--bg);
+					border: 1px solid var(--bd);
+					transform: skewX(-14deg);
+					transition:
+						background-color 0.25s,
+						border-color 0.25s,
+						box-shadow 0.25s;
+				}
+				.btn::after {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: -1;
+					transform: skewX(-14deg);
+					background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent) no-repeat;
+					background-size: 40% 100%;
+					background-position: -60% 0;
+					opacity: 0;
+				}
+				.btn:focus-visible {
+					outline: none;
+				}
+				.btn:focus-visible::before {
+					outline: 2px solid var(--electric);
+					outline-offset: 4px;
+				}
+				.btn--red {
+					--bg: var(--racing);
+					--bd: var(--racing);
+				}
+				.btn--red::before {
+					box-shadow: 0 0 40px rgba(225, 29, 46, 0.25);
+				}
+				.btn--red:hover {
+					--bg: #c8102e;
+				}
+				.btn--metal {
+					--bd: rgba(255, 255, 255, 0.22);
+				}
+				.btn--metal::before {
+					background:
+						repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px),
+						linear-gradient(180deg, #2a2d34, #15171b 60%, #1c1f24);
+				}
+				.btn--metal:hover {
+					--bd: rgba(255, 255, 255, 0.45);
+				}
+				@media (prefers-reduced-motion: no-preference) {
+					.btn:hover::after {
+						opacity: 1;
+						background-position: 160% 0;
+						transition: background-position 0.6s var(--ease);
+					}
+				}
+				.ico-sm {
+					width: 18px;
+					height: 18px;
+					fill: none;
+					stroke: currentColor;
+					stroke-width: 1.8;
+					stroke-linecap: round;
+					stroke-linejoin: round;
+					flex: none;
+				}
+
+				/* ---------------------------------------------------------- header */
+				.hdr {
+					position: fixed;
+					inset: 0 0 auto;
+					z-index: 50;
+					height: var(--hdr);
+				}
+				.hdr__glass {
+					position: absolute;
+					inset: 0;
+					background: rgba(5, 6, 8, 0);
+					border-bottom: 1px solid transparent;
+					transform-origin: top;
+					transition:
+						transform 0.4s var(--ease),
+						background-color 0.4s,
+						border-color 0.4s,
+						backdrop-filter 0.4s;
+				}
+				.hdr__progress {
+					position: absolute;
+					left: 0;
+					bottom: -1px;
+					width: 100%;
+					height: 2px;
+					background: linear-gradient(90deg, rgba(225, 29, 46, 0), var(--racing));
+					transform: scaleX(0);
+					transform-origin: left;
+				}
+				.hdr__bar {
+					position: relative;
+					z-index: 2;
+					height: var(--hdr);
+					max-width: var(--max);
+					margin-inline: auto;
+					padding-inline: var(--gut);
+					display: flex;
+					align-items: center;
+					gap: clamp(10px, 2.4vw, 28px);
+					transition: transform 0.4s var(--ease);
+				}
+				.hdr.is-compact .hdr__glass,
+				.hdr.is-open .hdr__glass {
+					transform: scaleY(0.74);
+					background: rgba(5, 6, 8, 0.72);
+					border-color: var(--line);
+					-webkit-backdrop-filter: blur(16px) saturate(140%);
+					backdrop-filter: blur(16px) saturate(140%);
+				}
+				.hdr.is-compact .hdr__bar,
+				.hdr.is-open .hdr__bar {
+					transform: translateY(-10px);
+				}
+				.hdr__logo {
+					display: block;
+					margin-right: auto;
+					padding: 6px 0;
+					transition: transform 0.4s var(--ease);
+					transform-origin: left center;
+				}
+				/* top of page: larger logo with its "RS AUTO" line; scrolled: compact wordmark only */
+				.hdr__logo {
+					transform: translateY(-5px);
+				}
+				@media (min-width: 560px) {
+					.hdr__logo {
+						transform: translateY(-5px) scale(1.18);
+					}
+				}
+				.hdr.is-compact .hdr__logo,
+				.hdr.is-open .hdr__logo {
+					transform: scale(0.86);
+				}
+				.wordmark {
+					height: 30px;
+					width: auto;
+					aspect-ratio: 564 / 104;
+					overflow: visible;
+				}
+				.wm-tag {
+					transition: opacity 0.3s;
+				}
+				.hdr.is-compact .wm-tag,
+				.hdr.is-open .wm-tag {
+					opacity: 0;
+				}
+				.hdr__nav {
+					display: none;
+					gap: clamp(18px, 2vw, 32px);
+					font-size: 0.9375rem;
+					font-weight: 500;
+				}
+				.hdr__nav a {
+					position: relative;
+					padding: 8px 0;
+					color: var(--soft);
+					text-decoration: none;
+					transition: color 0.2s;
+				}
+				.hdr__nav a::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 2px;
+					height: 3px;
+					background: linear-gradient(90deg, transparent, var(--racing));
+					transform: skewX(-14deg) scaleX(0);
+					transform-origin: right;
+					transition: transform 0.35s var(--ease);
+				}
+				.hdr__nav a:hover,
+				.hdr__nav a[aria-current] {
+					color: #fff;
+				}
+				.hdr__nav a:hover::after,
+				.hdr__nav a[aria-current]::after {
+					transform: skewX(-14deg) scaleX(1);
+				}
+				.btn--call {
+					min-height: 40px;
+					padding: 0 1.1rem;
+					font-family: var(--f-mono);
+					font-weight: 500;
+					font-size: 0.875rem;
+					letter-spacing: 0.02em;
+					white-space: nowrap;
+				}
+				.burger {
+					position: relative;
+					width: 44px;
+					height: 44px;
+					display: grid;
+					place-items: center;
+					background: none;
+					border: 1px solid var(--line);
+					color: #fff;
+					cursor: pointer;
+				}
+				.burger__lines {
+					display: grid;
+					gap: 5px;
+					justify-items: end;
+					transform: skewX(-14deg);
+				}
+				.burger__lines i {
+					display: block;
+					height: 2px;
+					background: currentColor;
+					transition:
+						transform 0.35s var(--ease),
+						width 0.35s var(--ease),
+						opacity 0.2s;
+				}
+				.burger__lines i:nth-child(1) {
+					width: 22px;
+				}
+				.burger__lines i:nth-child(2) {
+					width: 16px;
+					background: var(--racing);
+				}
+				.burger__lines i:nth-child(3) {
+					width: 10px;
+				}
+				.burger[aria-expanded="true"] .burger__lines i:nth-child(1) {
+					transform: translateY(7px) rotate(45deg);
+				}
+				.burger[aria-expanded="true"] .burger__lines i:nth-child(2) {
+					opacity: 0;
+				}
+				.burger[aria-expanded="true"] .burger__lines i:nth-child(3) {
+					width: 22px;
+					transform: translateY(-7px) rotate(-45deg);
+				}
+
+				.mmenu {
+					position: fixed;
+					inset: 0;
+					z-index: 1;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					padding: calc(var(--hdr) + 24px) var(--gut) 48px;
+					background:
+						radial-gradient(ellipse 60% 40% at 90% 10%, rgba(225, 29, 46, 0.18), transparent 70%),
+						var(--ink);
+					visibility: hidden;
+					clip-path: polygon(0 0, 0 0, -30vh 100%, -30vh 100%);
+					transition:
+						clip-path 0.55s var(--ease-io),
+						visibility 0s linear 0.55s;
+				}
+				.mmenu.is-open {
+					visibility: visible;
+					clip-path: polygon(0 0, calc(100% + 30vh) 0, 100% 100%, -30vh 100%);
+					transition:
+						clip-path 0.55s var(--ease-io),
+						visibility 0s;
+				}
+				.mmenu__nav {
+					display: grid;
+					gap: 0.3rem;
+				}
+				.mmenu__nav a {
+					display: flex;
+					align-items: baseline;
+					gap: 1rem;
+					padding: 0.35rem 0;
+					font-family: var(--f-display);
+					font-weight: 800;
+					font-stretch: 125%;
+					font-size: clamp(2rem, 9vw, 3.4rem);
+					line-height: 1.05;
+					letter-spacing: -0.02em;
+					text-decoration: none;
+				}
+				.mmenu__nav a .tl {
+					font-style: normal;
+					min-width: 1.6rem;
+				}
+				.mmenu__nav .mmenu__cta {
+					margin-top: 1rem;
+					color: #fff;
+				}
+				.mmenu__nav .mmenu__cta::before {
+					content: "";
+					display: inline-block;
+					width: 1.6rem;
+					height: 0.35em;
+					background: linear-gradient(90deg, transparent, var(--racing));
+					transform: skewX(-14deg);
+					align-self: center;
+				}
+				.mmenu__streaks {
+					position: absolute;
+					right: var(--gut);
+					bottom: 40px;
+					width: 120px;
+					height: 82px;
+					opacity: 0.8;
+				}
+
+				@media (min-width: 1024px) {
+					.hdr__nav {
+						display: flex;
+					}
+					.burger,
+					.mmenu {
+						display: none;
+					}
+				}
+				@media (max-width: 400px) {
+					.wordmark {
+						height: 22px;
+					}
+					.btn--call {
+						padding: 0 0.7rem;
+						font-size: 0.8125rem;
+						gap: 0.4rem;
+					}
+					.btn--call .ico-sm {
+						width: 15px;
+						height: 15px;
+					}
+					.burger {
+						width: 40px;
+						height: 40px;
+					}
+				}
+
+				/* ---------------------------------------------------------- hero */
+				.hero {
+					position: relative;
+					display: grid;
+					align-items: start;
+					padding: calc(var(--hdr) + clamp(24px, 5vh, 56px)) 0 clamp(40px, 6vw, 80px);
+					overflow: clip;
+				}
+				.hero__inner {
+					width: 100%;
+					max-width: var(--max);
+					margin-inline: auto;
+					padding-inline: var(--gut);
+					display: grid;
+					gap: 24px;
+					align-items: center;
+				}
+				.hero__copy {
+					position: relative;
+					container-type: inline-size;
+				}
+				.hero__title {
+					font-size: clamp(2rem, min(13cqi, 8.6vh), 6.4rem);
+					line-height: 0.98;
+					text-wrap: initial;
+				}
+				.hero__title .w {
+					display: inline-block;
+					padding: 0.04em 0.22em 0.12em;
+					margin: -0.04em -0.22em -0.12em;
+					overflow: hidden;
+					vertical-align: top;
+				}
+				.hero__title .w > span {
+					display: inline-block;
+				}
+				.hero__lead {
+					max-width: 36rem;
+					margin-top: 1.6rem;
+					font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+					line-height: 1.7;
+					color: var(--soft);
+				}
+				.hero__ctas {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 14px 22px;
+					margin-top: 2rem;
+					padding-left: 6px;
+				}
+				.hero__fig {
+					position: relative;
+					margin: 0;
+				}
+				.hd {
+					width: 100%;
+					height: auto;
+					overflow: visible;
+				}
+				.hero__meta {
+					position: absolute;
+					right: 0;
+					bottom: -6px;
+					display: flex;
+					align-items: flex-end;
+					gap: 14px;
+				}
+				.hero__cartouche {
+					display: grid;
+					font-size: 0.6875rem;
+				}
+				.hero__cartouche span {
+					padding: 4px 10px;
+					border: 1px solid var(--line);
+					background: rgba(5, 6, 8, 0.6);
+				}
+				.hero__cartouche span + span {
+					border-top: 0;
+				}
+				.hero__marks i {
+					position: absolute;
+					width: 14px;
+					height: 14px;
+					opacity: 0.5;
+					background:
+						linear-gradient(var(--muted), var(--muted)) center / 1px 100% no-repeat,
+						linear-gradient(var(--muted), var(--muted)) center / 100% 1px no-repeat;
+				}
+				.hero__marks i:nth-child(1) {
+					left: calc(var(--gut) / 2);
+					top: calc(var(--hdr) + 8px);
+				}
+				.hero__marks i:nth-child(2) {
+					right: calc(var(--gut) / 2);
+					top: calc(var(--hdr) + 8px);
+				}
+				.hero__marks i:nth-child(3) {
+					left: calc(var(--gut) / 2);
+					bottom: 20px;
+				}
+				.hero__marks i:nth-child(4) {
+					right: calc(var(--gut) / 2);
+					bottom: 20px;
+				}
+				.hero__play {
+					position: relative;
+					width: 40px;
+					height: 34px;
+					display: grid;
+					place-items: center;
+					background: none;
+					border: 0;
+					color: var(--soft);
+					cursor: pointer;
+					isolation: isolate;
+				}
+				.hero__play[hidden] {
+					display: none;
+				}
+				.hero__play::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: -1;
+					border: 1px solid var(--line);
+					background: rgba(5, 6, 8, 0.6);
+					transform: skewX(-14deg);
+					transition: border-color 0.2s;
+				}
+				.hero__play:hover::before {
+					border-color: var(--racing);
+				}
+				.hero__play:focus-visible {
+					outline: none;
+				}
+				.hero__play:focus-visible::before {
+					outline: 2px solid var(--electric);
+					outline-offset: 3px;
+				}
+				.hero__play svg {
+					width: 16px;
+					height: 16px;
+					fill: none;
+					stroke: currentColor;
+					stroke-width: 2;
+					stroke-linecap: round;
+					stroke-linejoin: round;
+				}
+				.hero__play .i-play,
+				.hero__play[aria-pressed="true"] .i-pause {
+					display: none;
+				}
+				.hero__play[aria-pressed="true"] .i-play {
+					display: block;
+				}
+
+				@media (min-width: 1024px) {
+					.hero__inner {
+						grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+						gap: clamp(16px, 3vw, 56px);
+					}
+					.hero__fig {
+						margin-right: 0;
+					}
+					.hero__meta {
+						right: var(--gut);
+					}
+				}
+				@media (max-width: 1023.98px) {
+					.hero__fig {
+						max-width: 640px;
+						margin: 12px auto 0;
+						width: 100%;
+					}
+				}
+				@media (max-width: 640px) {
+					.hd {
+						width: 128%;
+						margin-left: -14%;
+					}
+					.hd .anno,
+					.hd .cote,
+					.hero__cartouche {
+						display: none;
+					}
+				}
+
+				/* drawing */
+				.hd .ln {
+					fill: none;
+					stroke: #cfd3da;
+					stroke-opacity: 0.72;
+					stroke-width: 1.15;
+					stroke-linejoin: round;
+				}
+				.hd .f0 {
+					fill: #090b0f;
+				}
+				.hd .f1 {
+					fill: #0f1217;
+				}
+				.hd .fr0 {
+					fill: #5c0910;
+					stroke: #ff5a66;
+					stroke-opacity: 0.8;
+				}
+				.hd .fr {
+					fill: var(--racing);
+					stroke: #ff8a92;
+					stroke-opacity: 0.9;
+				}
+				.hd .ce {
+					stroke: #050608;
+					stroke-opacity: 0.35;
+				}
+				.hd .cs {
+					fill: #050608;
+					fill-opacity: 0.55;
+				}
+				.hd .v {
+					stroke-opacity: 0.35;
+				}
+				.hd .lr {
+					fill: none;
+					stroke: #fff;
+					stroke-opacity: 0.07;
+					vector-effect: non-scaling-stroke;
+				}
+				.hd .lr2 {
+					stroke-opacity: 0.3;
+				}
+				.hd .h {
+					fill: #050608;
+				}
+				.hd .axis {
+					fill: none;
+					stroke: var(--muted);
+					stroke-opacity: 0.5;
+					stroke-width: 1;
+					stroke-dasharray: 22 5 3 5;
+				}
+				.hd .ld {
+					fill: none;
+					stroke: var(--muted);
+					stroke-width: 1;
+				}
+				.hd .ldo,
+				.hd .arw {
+					fill: var(--muted);
+				}
+				.hd .lt {
+					font-family: var(--f-mono);
+					font-weight: 500;
+					font-size: 14px;
+					fill: var(--muted);
+				}
+				.hd .lk {
+					fill: #fff;
+				}
+
+				/* ---------------------------------------------------------- sections */
+				.sec {
+					position: relative;
+					padding-block: clamp(48px, 6vw, 88px);
+				}
+				.sec-head {
+					max-width: 56rem;
+				}
+				.sec-title {
+					font-size: clamp(2.2rem, 1.2rem + 4.4vw, 4.6rem);
+				}
+				.sec-lead {
+					max-width: 40rem;
+					margin-top: 1.2rem;
+					color: var(--soft);
+					font-size: 1.0625rem;
+				}
+				#avis {
+					padding-bottom: clamp(48px, 6vw, 80px);
+				}
+				@media (min-width: 1024px) {
+					.sec-head--split {
+						max-width: none;
+						display: grid;
+						grid-template-columns: minmax(0, 1fr) minmax(0, 26rem);
+						align-items: end;
+						column-gap: 4rem;
+					}
+					.sec-head--split .sec-lead {
+						margin: 0 0 0.5rem;
+					}
+				}
+
+				/* ---------------------------------------------------------- services bento */
+				.bento {
+					display: grid;
+					gap: 12px;
+					margin-top: clamp(28px, 4vw, 44px);
+				}
+				.tile {
+					--cut: 14px;
+					--cut-y: 56px;
+					position: relative;
+					padding: 1px;
+					background: var(--line);
+					clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut-y), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut-y)));
+					transition: background-color 0.3s;
+				}
+				.tile__in {
+					position: relative;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					gap: 0.6rem;
+					padding: clamp(22px, 2.4vw, 30px);
+					background: var(--tile);
+					clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut-y), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut-y)));
+					overflow: hidden;
+				}
+				.tile__in::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 45%;
+					height: 2px;
+					background: linear-gradient(90deg, transparent, var(--racing));
+					transform: translateX(-110%);
+				}
+				.tile:hover {
+					background: rgba(225, 29, 46, 0.6);
+				}
+				.tile .ico {
+					width: 48px;
+					height: 48px;
+					margin-bottom: auto;
+					fill: none;
+					stroke: var(--racing);
+					stroke-width: 1.75;
+					stroke-linecap: round;
+					stroke-linejoin: round;
+					overflow: visible;
+					transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+				}
+				.tile__title {
+					margin-top: 1.6rem;
+					font-family: var(--f-display);
+					font-weight: 800;
+					font-stretch: 125%;
+					font-size: 1.1875rem;
+					line-height: 1.15;
+					letter-spacing: -0.01em;
+				}
+				.tile__text {
+					color: var(--muted);
+					font-size: 0.9375rem;
+					line-height: 1.6;
+					max-width: 34rem;
+				}
+				.t--xl .ico {
+					width: 104px;
+					height: 104px;
+					stroke-width: 1.05;
+				}
+				.t--xl .tile__title {
+					font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+				}
+				.t--xl .tile__text {
+					font-size: 1.0625rem;
+					color: var(--soft);
+				}
+				.tile__plan {
+					display: contents;
+				}
+				@media (prefers-reduced-motion: no-preference) {
+					.tile:hover .tile__in::before {
+						transform: translateX(330%);
+						transition: transform 0.8s var(--ease);
+					}
+					.tile:hover .ico {
+						transform: rotate(14deg);
+					}
+					.tile:hover .ico > * {
+						stroke-dasharray: 1;
+						animation: draw 0.8s var(--ease-io) both;
+					}
+					.tile.is-drawn .ico > * {
+						stroke-dasharray: 1;
+						animation: draw 1s var(--ease-io) both;
+					}
+				}
+				@media (min-width: 640px) {
+					.bento {
+						grid-template-columns: repeat(2, minmax(0, 1fr));
+					}
+					.t--xl,
+					.t--w2,
+					.t--w4 {
+						grid-column: span 2;
+					}
+				}
+				@media (min-width: 1024px) {
+					.bento {
+						grid-template-columns: repeat(4, minmax(0, 1fr));
+						grid-auto-rows: minmax(200px, auto);
+					}
+					.bento {
+						grid-template-rows: repeat(4, minmax(184px, auto)) auto;
+					}
+					.t--xl {
+						grid-row: span 2;
+					}
+					.t--xl .tile__in {
+						justify-content: flex-end;
+					}
+					.tile__plan {
+						position: absolute;
+						right: -36px;
+						top: -36px;
+						width: clamp(260px, 24vw, 340px);
+						aspect-ratio: 1;
+						display: grid;
+						place-items: center;
+						border: 1px dashed rgba(255, 255, 255, 0.1);
+						border-radius: 50%;
+						pointer-events: none;
+					}
+					.tile__plan::before,
+					.tile__plan::after {
+						content: "";
+						position: absolute;
+						background: rgba(255, 255, 255, 0.07);
+					}
+					.tile__plan::before {
+						left: 50%;
+						top: -24px;
+						bottom: -24px;
+						width: 1px;
+					}
+					.tile__plan::after {
+						top: 50%;
+						left: -24px;
+						right: -24px;
+						height: 1px;
+					}
+					.t--xl .ico {
+						position: relative;
+						z-index: 1;
+						width: 46%;
+						height: auto;
+						margin: 0;
+						stroke-width: 0.55;
+					}
+					.t--w2 .tile__in {
+						display: grid;
+						grid-template-columns: minmax(0, 1fr) auto;
+						grid-template-rows: 1fr auto auto;
+						column-gap: 2rem;
+					}
+					.t--w2 .ico {
+						grid-column: 2;
+						grid-row: 1 / span 3;
+						width: 64px;
+						height: 64px;
+						margin: 0;
+						stroke-width: 1.3;
+					}
+					.t--w2 .tile__title {
+						grid-column: 1;
+						grid-row: 2;
+					}
+					.t--w2 .tile__text {
+						grid-column: 1;
+						grid-row: 3;
+					}
+					.t--w4 {
+						grid-column: span 4;
+					}
+					.t--w4 .tile__in {
+						flex-direction: row;
+						align-items: center;
+						gap: 2rem;
+						padding-block: 26px;
+					}
+					.t--w4 .ico {
+						width: 72px;
+						height: 72px;
+						stroke-width: 1.2;
+						margin: 0;
+					}
+					.t--w4 .tile__title {
+						margin: 0;
+						min-width: 16rem;
+					}
+				}
+
+				/* ---------------------------------------------------------- about / cluster */
+				.about {
+					display: grid;
+					gap: clamp(40px, 5vw, 72px);
+					align-items: start;
+				}
+				.about__copy > .tl {
+					margin-top: 1.6rem;
+				}
+				.about__lead {
+					margin-top: 1.4rem;
+					font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+					line-height: 1.6;
+					color: var(--text);
+					max-width: 34rem;
+				}
+				.about__text {
+					margin-top: 1rem;
+					color: var(--muted);
+					line-height: 1.8;
+					max-width: 34rem;
+				}
+				.cluster {
+					--cut: 18px;
+					--cut-y: 72px;
+					position: relative;
+					padding: clamp(20px, 3vw, 40px);
+					clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut-y), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut-y)));
+					background:
+						linear-gradient(180deg, rgba(5, 6, 8, 0.55), rgba(5, 6, 8, 0.85)),
+						linear-gradient(27deg, #141518 5px, transparent 5px) 0 5px,
+						linear-gradient(207deg, #141518 5px, transparent 5px) 10px 0,
+						linear-gradient(27deg, #1d1f23 5px, transparent 5px) 0 10px,
+						linear-gradient(207deg, #1d1f23 5px, transparent 5px) 10px 5px,
+						linear-gradient(90deg, #18191d 10px, transparent 10px),
+						linear-gradient(#1a1b1f 25%, #17181b 25%, #17181b 50%, transparent 50%, transparent 75%, #202226 75%, #202226);
+					background-color: #121316;
+					background-size:
+						100% 100%,
+						20px 20px,
+						20px 20px,
+						20px 20px,
+						20px 20px,
+						20px 20px,
+						20px 20px;
+					box-shadow: inset 0 0 0 1px var(--line);
+				}
+				.cluster__gauge {
+					max-width: 400px;
+					margin: 0 auto;
+				}
+				.gauge {
+					width: 100%;
+					height: auto;
+					overflow: visible;
+				}
+				.gauge .g-ring {
+					fill: none;
+					stroke: rgba(255, 255, 255, 0.14);
+					stroke-width: 1;
+				}
+				.gauge .g-zone {
+					fill: none;
+					stroke: var(--racing);
+					stroke-width: 7;
+				}
+				.gauge .g-minor {
+					stroke: rgba(255, 255, 255, 0.35);
+					stroke-width: 1.5;
+				}
+				.gauge .g-major {
+					stroke: #fff;
+					stroke-width: 3;
+				}
+				.gauge .g-num {
+					font-family: var(--f-mono);
+					font-weight: 500;
+					font-size: 17px;
+					fill: var(--soft);
+					text-anchor: middle;
+				}
+				.gauge .g-val,
+				.gauge .g-val-glow {
+					fill: none;
+					stroke: var(--racing);
+					stroke-linecap: round;
+					stroke-dasharray: 1;
+					stroke-dashoffset: 0.4444;
+				}
+				.gauge .g-val {
+					stroke-width: 3;
+				}
+				.gauge .g-val-glow {
+					stroke-width: 12;
+					stroke-opacity: 0.18;
+				}
+				.gauge .g-needle {
+					fill: var(--racing);
+				}
+				.gauge .g-hub {
+					fill: #0c0d10;
+					stroke: rgba(255, 255, 255, 0.25);
+				}
+				.gauge .g-pin {
+					fill: var(--racing);
+				}
+				.gauge .g-read {
+					font-family: var(--f-display);
+					font-weight: 800;
+					font-stretch: 125%;
+					font-size: 56px;
+					fill: #fff;
+					text-anchor: middle;
+				}
+				.gauge .g-unit {
+					font-family: var(--f-mono);
+					font-weight: 500;
+					font-size: 14px;
+					fill: var(--muted);
+					text-anchor: middle;
+				}
+				.lamps {
+					display: grid;
+					gap: 1px;
+					margin-top: clamp(20px, 3vw, 32px);
+					background: var(--line);
+					border: 1px solid var(--line);
+				}
+				.lamp {
+					display: grid;
+					grid-template-columns: auto 1fr;
+					gap: 0.6rem 1rem;
+					align-items: center;
+					align-content: start;
+					padding: 20px 22px;
+					background: rgba(8, 9, 12, 0.92);
+				}
+				.lamp h3 {
+					font-weight: 700;
+					font-size: 1.0625rem;
+					line-height: 1.3;
+				}
+				.lamp p {
+					grid-column: 1 / -1;
+					color: var(--muted);
+					font-size: 0.9375rem;
+					line-height: 1.6;
+				}
+				.lamp__ico {
+					position: relative;
+					display: grid;
+					place-items: center;
+					width: 44px;
+					height: 44px;
+					border-radius: 50%;
+					border: 1px solid rgba(225, 29, 46, 0.5);
+					background: radial-gradient(circle, rgba(225, 29, 46, 0.22), transparent 70%);
+					box-shadow: 0 0 22px rgba(225, 29, 46, 0.35);
+					transition:
+						border-color 0.4s,
+						box-shadow 0.4s,
+						background-color 0.4s;
+				}
+				.lamp__ico .ico {
+					width: 26px;
+					height: 26px;
+					fill: none;
+					stroke: #ff5a66;
+					stroke-width: 2;
+					stroke-linecap: round;
+					stroke-linejoin: round;
+					transition: stroke 0.4s;
+				}
+				.cluster.is-live .lamp:not(.is-on) .lamp__ico {
+					border-color: rgba(255, 255, 255, 0.14);
+					background: none;
+					box-shadow: none;
+				}
+				.cluster.is-live .lamp:not(.is-on) .ico {
+					stroke: rgba(255, 255, 255, 0.4);
+				}
+				@media (min-width: 640px) {
+					.lamps {
+						grid-template-columns: repeat(2, minmax(0, 1fr));
+					}
+				}
+				@media (min-width: 1024px) {
+					.about {
+						grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+					}
+					.about__copy {
+						position: sticky;
+						top: 120px;
+					}
+				}
+
+				/* ---------------------------------------------------------- localisation */
+				.sec--loc {
+					border-block: 1px solid var(--line);
+					background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+				}
+				.anchor {
+					position: absolute;
+					top: 0;
+				}
+				.loc {
+					display: grid;
+					gap: clamp(40px, 5vw, 64px);
+					align-items: center;
+				}
+				.fiche {
+					margin-top: 2rem;
+					border-top: 1px solid var(--line);
+				}
+				.fiche__row {
+					display: grid;
+					gap: 0.15rem 1.5rem;
+					padding: 0.95rem 0;
+					border-bottom: 1px solid var(--line);
+				}
+				.fiche dt {
+					font-family: var(--f-mono);
+					font-weight: 500;
+					font-size: 0.8125rem;
+					color: var(--muted);
+				}
+				.fiche dd {
+					color: var(--text);
+					font-size: 1.0625rem;
+					overflow-wrap: anywhere;
+				}
+				.fiche dd a {
+					text-decoration: none;
+					background: linear-gradient(var(--racing), var(--racing)) 0 100% / 0 2px no-repeat;
+					transition: background-size 0.3s var(--ease);
+				}
+				.fiche dd a:hover {
+					background-size: 100% 2px;
+				}
+				.loc__cta {
+					margin-top: 2rem;
+					margin-left: 6px;
+				}
+				.map {
+					position: relative;
+				}
+				.map__frame {
+					position: relative;
+					aspect-ratio: 4 / 3;
+					border: 1px solid var(--line);
+					background: var(--panel);
+				}
+				.map__frame iframe {
+					display: block;
+					width: 100%;
+					height: 100%;
+					border: 0;
+					filter: invert(0.9) hue-rotate(180deg) saturate(0.35) brightness(0.92) contrast(0.92);
+				}
+				.map__frame::after {
+					content: "";
+					position: absolute;
+					inset: 0;
+					pointer-events: none;
+					background: radial-gradient(ellipse at center, transparent 55%, rgba(5, 6, 8, 0.55));
+					box-shadow: inset 0 0 0 1px rgba(5, 6, 8, 0.6);
+				}
+				.map__corner {
+					position: absolute;
+					width: 18px;
+					height: 18px;
+					border: 0 solid var(--racing);
+					pointer-events: none;
+					z-index: 1;
+				}
+				.map__corner:nth-of-type(1) {
+					top: -6px;
+					left: -6px;
+					border-width: 2px 0 0 2px;
+				}
+				.map__corner:nth-of-type(2) {
+					top: -6px;
+					right: -6px;
+					border-width: 2px 2px 0 0;
+				}
+				.map__corner:nth-of-type(3) {
+					bottom: -6px;
+					left: -6px;
+					border-width: 0 0 2px 2px;
+				}
+				.map__corner:nth-of-type(4) {
+					bottom: -6px;
+					right: -6px;
+					border-width: 0 2px 2px 0;
+				}
+				.map__coords {
+					position: absolute;
+					right: 12px;
+					top: 12px;
+					z-index: 1;
+					padding: 6px 9px;
+					background: rgba(5, 6, 8, 0.82);
+					color: var(--soft);
+					pointer-events: none;
+				}
+				.map__caption {
+					margin-top: 0.9rem;
+					color: var(--muted);
+					font-size: 0.875rem;
+				}
+				@media (min-width: 640px) {
+					.fiche__row {
+						grid-template-columns: 11.5rem 1fr;
+						align-items: baseline;
+					}
+				}
+				@media (min-width: 1024px) {
+					.loc {
+						grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+					}
+				}
+
+				/* ---------------------------------------------------------- reviews deck */
+				.deck {
+					margin-top: clamp(28px, 4vw, 48px);
+					max-width: 70rem;
+				}
+				.deck__stage {
+					display: grid;
+					gap: 16px;
+				}
+				.deck__card {
+					position: relative;
+					padding: clamp(28px, 4vw, 56px);
+					background: var(--tile);
+					border: 1px solid var(--line);
+				}
+				.deck__card figure {
+					margin: 0;
+				}
+				.deck__card blockquote {
+					margin: 0;
+					font-family: var(--f-display);
+					font-weight: 800;
+					font-stretch: 125%;
+					font-size: clamp(1.25rem, 0.9rem + 1.6vw, 2.25rem);
+					line-height: 1.22;
+					letter-spacing: -0.01em;
+					max-width: 40ch;
+				}
+				.deck__card figcaption {
+					margin-top: 1.6rem;
+					font-family: var(--f-mono);
+					font-weight: 500;
+					font-size: 0.8125rem;
+					color: var(--soft);
+				}
+				.deck__streaks {
+					width: 60px;
+					height: 41px;
+					margin-bottom: 1.4rem;
+				}
+				.deck__ctrl {
+					display: none;
+					align-items: center;
+					gap: 18px;
+					margin-top: 28px;
+				}
+				.deck__btn {
+					position: relative;
+					width: 52px;
+					height: 44px;
+					display: grid;
+					place-items: center;
+					background: none;
+					border: 0;
+					color: #fff;
+					cursor: pointer;
+					isolation: isolate;
+				}
+				.deck__btn::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					z-index: -1;
+					border: 1px solid rgba(255, 255, 255, 0.25);
+					transform: skewX(-14deg);
+					transition:
+						border-color 0.2s,
+						background-color 0.2s;
+				}
+				.deck__btn:hover::before {
+					border-color: var(--racing);
+					background: rgba(225, 29, 46, 0.15);
+				}
+				.deck__btn:focus-visible {
+					outline: none;
+				}
+				.deck__btn:focus-visible::before {
+					outline: 2px solid var(--electric);
+					outline-offset: 3px;
+				}
+				.deck__btn svg {
+					width: 20px;
+					height: 20px;
+					fill: none;
+					stroke: currentColor;
+					stroke-width: 2;
+					stroke-linecap: round;
+					stroke-linejoin: round;
+				}
+				.js .deck__ctrl {
+					display: flex;
+				}
+				.js .deck__stage {
+					--off: clamp(12px, 2vw, 22px);
+					gap: 0;
+					padding-top: calc(var(--off) * 2);
+					padding-right: calc(var(--off) * 2);
+				}
+				.js .deck__card {
+					grid-area: 1 / 1;
+					transform-origin: 50% 0;
+					transition:
+						transform 0.6s var(--ease),
+						opacity 0.6s var(--ease);
+				}
+				.js .deck__card[data-pos="0"] {
+					z-index: 3;
+				}
+				.js .deck__card[data-pos="1"] {
+					z-index: 2;
+					transform: translate(var(--off), calc(var(--off) * -1)) scale(0.97);
+					border-color: rgba(255, 255, 255, 0.2);
+					opacity: 0.75;
+				}
+				.js .deck__card[data-pos="2"] {
+					z-index: 1;
+					transform: translate(calc(var(--off) * 2), calc(var(--off) * -2)) scale(0.94);
+					border-color: rgba(255, 255, 255, 0.2);
+					opacity: 0.4;
+				}
+				.js .deck__card[data-pos="1"] > *,
+				.js .deck__card[data-pos="2"] > * {
+					visibility: hidden;
+				}
+				.js .deck__card.is-out > * {
+					visibility: visible;
+				}
+				@media (prefers-reduced-motion: no-preference) {
+					.js .deck__card.is-out {
+						animation: deck-out 0.6s var(--ease-io) both;
+					}
+					.js .deck__card.is-in {
+						animation: deck-in 0.6s var(--ease) both;
+					}
+				}
+
+				/* ---------------------------------------------------------- footer */
+				.ftr {
+					position: relative;
+					padding: clamp(48px, 6vw, 72px) 0 40px;
+					border-top: 1px solid var(--line);
+				}
+				.ftr__logo {
+					width: 220px;
+					height: auto;
+				}
+				.ftr__title {
+					font-weight: 700;
+					font-size: 1rem;
+				}
+				.ftr__list {
+					display: grid;
+					gap: 0.5rem;
+					margin-top: 0.9rem;
+					font-size: 0.875rem;
+					color: var(--muted);
+				}
+				.ftr__list a {
+					width: fit-content;
+					text-decoration: none;
+					transition: color 0.2s;
+				}
+				.ftr__list a:hover {
+					color: #fff;
+				}
+				.ftr__legal {
+					margin-top: 48px;
+					padding-top: 24px;
+					background: linear-gradient(var(--line), var(--line)) var(--gut) 0 / calc(100% - 2 * var(--gut)) 1px no-repeat;
+					font-size: 0.875rem;
+					color: var(--muted);
+				}
+
+				/* ---------------------------------------------------------- motion */
+				@media (prefers-reduced-motion: no-preference) {
+					/* initial states, only when JS runs and motion is allowed */
+					.js:not(.ready) .hero__title .w > span {
+						transform: translate3d(-0.5em, 115%, 0);
+					}
+					.js:not(.ready) .hero__lead,
+					.js:not(.ready) .hero__ctas,
+					.js:not(.ready) .hero__cartouche span {
+						opacity: 0;
+					}
+					.js:not(.ready) .wm-streak {
+						transform: scaleX(0);
+					}
+					.js:not(.ready) .hd .ln,
+					.js:not(.ready) .hd .ld {
+						stroke-dasharray: 1;
+						stroke-dashoffset: 1;
+					}
+					.js:not(.ready) .hd .f0,
+					.js:not(.ready) .hd .f1,
+					.js:not(.ready) .hd .fr0,
+					.js:not(.ready) .hd .fr,
+					.js:not(.ready) .hd .h,
+					.js:not(.ready) .hd .cs,
+					.js:not(.ready) .hd .lt,
+					.js:not(.ready) .hd .ldo,
+					.js:not(.ready) .hd .arw {
+						fill-opacity: 0;
+					}
+					.js:not(.ready) .hd .lr,
+					.js:not(.ready) .hd .axis {
+						stroke-opacity: 0;
+					}
+
+					.ready .hero__title .w > span {
+						animation: word-in 0.85s var(--ease) both;
+						animation-delay: calc(0.05s + var(--i) * 0.055s);
+					}
+					.ready .hero__lead {
+						animation: rise-in 0.8s var(--ease) 0.45s both;
+					}
+					.ready .hero__ctas {
+						animation: rise-in 0.8s var(--ease) 0.55s both;
+					}
+					.ready .hero__cartouche span {
+						animation: fade-in 0.6s ease 1.6s both;
+					}
+					.ready .wm-streak {
+						transform-box: fill-box;
+						transform-origin: right center;
+						animation: streak-in 0.9s var(--ease) both;
+						animation-delay: calc(var(--i) * 0.07s);
+					}
+					.ready .hd .axis {
+						animation: fade-axis 0.8s ease both;
+					}
+					.ready .hd .ln,
+					.ready .hd .ld {
+						animation: draw 1.1s var(--ease-io) both;
+						animation-delay: calc(0.25s + var(--d, 0.9s));
+					}
+					.ready .hd .ln.f0,
+					.ready .hd .ln.f1,
+					.ready .hd .ln.fr0,
+					.ready .hd .ln.fr {
+						animation:
+							draw 1.1s var(--ease-io) both,
+							fill-in 0.6s ease both;
+						animation-delay: calc(0.25s + var(--d)), calc(0.85s + var(--d));
+					}
+					.ready .hd .h,
+					.ready .hd .cs {
+						animation: fill-in 0.6s ease both;
+						animation-delay: calc(0.95s + var(--d));
+					}
+					.ready .hd .lr {
+						animation: fade-stroke 0.6s ease both;
+						animation-delay: calc(0.95s + var(--d));
+					}
+					.ready .hd .lt,
+					.ready .hd .ldo,
+					.ready .hd .arw {
+						animation: fill-in 0.5s ease 1.5s both;
+					}
+				}
+
+				@media (prefers-reduced-motion: reduce) {
+					*,
+					::before,
+					::after {
+						transition-duration: 0.01ms !important;
+						transition-delay: 0s !important;
+						animation-duration: 0.01ms !important;
+						animation-delay: 0s !important;
+						animation-iteration-count: 1 !important;
+					}
+				}
+
+				@keyframes word-in {
+					from {
+						transform: translate3d(-0.5em, 115%, 0);
+					}
+					to {
+						transform: none;
+					}
+				}
+				@keyframes rise-in {
+					from {
+						opacity: 0;
+						transform: translateY(16px);
+					}
+					to {
+						opacity: 1;
+						transform: none;
+					}
+				}
+				@keyframes fade-in {
+					from {
+						opacity: 0;
+					}
+					to {
+						opacity: 1;
+					}
+				}
+				@keyframes streak-in {
+					from {
+						transform: scaleX(0);
+					}
+					to {
+						transform: scaleX(1);
+					}
+				}
+				@keyframes draw {
+					from {
+						stroke-dasharray: 1;
+						stroke-dashoffset: 1;
+					}
+					to {
+						stroke-dasharray: 1;
+						stroke-dashoffset: 0;
+					}
+				}
+				@keyframes fill-in {
+					from {
+						fill-opacity: 0;
+					}
+				}
+				@keyframes fade-stroke {
+					from {
+						stroke-opacity: 0;
+					}
+				}
+				@keyframes fade-axis {
+					from {
+						stroke-opacity: 0;
+					}
+				}
+				@keyframes deck-out {
+					0% {
+						transform: none;
+						opacity: 1;
+						z-index: 4;
+					}
+					45% {
+						transform: translateX(-14%) skewX(-10deg);
+						opacity: 0;
+						z-index: 4;
+					}
+					46% {
+						z-index: 0;
+					}
+					100% {
+						opacity: 0.3;
+					}
+				}
+				@keyframes deck-in {
+					from {
+						transform: translateX(-14%) skewX(-10deg);
+						opacity: 0;
+					}
 				}
 			}
 		</style>
+
+		<script>
+			(function () {
+				var d = document.documentElement;
+				d.classList.replace("no-js", "js");
+				var ready = function () {
+					d.classList.add("ready");
+				};
+				if (document.fonts && document.fonts.load) {
+					Promise.race([
+						Promise.all([document.fonts.load('800 expanded 1em "Archivo"'), document.fonts.load('400 1em "Archivo"')]),
+						new Promise(function (r) {
+							setTimeout(r, 800);
+						}),
+					]).then(ready, ready);
+				} else {
+					ready();
+				}
+			})();
+		</script>
+
+		<style type="text/tailwindcss">
+			@theme {
+				--color-ink: #050608;
+				--color-panel: #111318;
+				--color-line: rgba(255, 255, 255, 0.12);
+				--color-racing: #e11d2e;
+				--color-electric: #19b7ff;
+				--shadow-glow: 0 0 40px rgba(225, 29, 46, 0.25);
+				--shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.35);
+				--font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+				--font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+			}
+		</style>
+
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "AutoRepair",
 				"name": "Mav. RS Auto",
 				"description": "Garage indépendant automobile à Maubourguet pour entretien, diagnostic auto, réparation automobile et préparation légère.",
+				"telephone": "+33682141054",
 				"address": {
 					"@type": "PostalAddress",
-					"streetAddress": "[Adresse complète à renseigner]",
 					"addressLocality": "Maubourguet",
+					"postalCode": "65700",
 					"addressRegion": "Hautes-Pyrénées",
 					"addressCountry": "FR"
 				},
-				"telephone": "+33682141054",
-				"email": "[Email à renseigner]",
-				"openingHours": "[Horaires à renseigner]",
-				"areaServed": ["Maubourguet", "Tarbes", "Lourdes", "Bagnères-de-Bigorre", "Hautes-Pyrénées"],
-				"url": "https://hugoerb.github.io/Site-Mav/#accueil"
+				"url": "https://hugoerb.github.io/Site-Mav/",
+				"logo": "https://hugoerb.github.io/Site-Mav/assets/apple-touch-icon.png"
 			}
 		</script>
 	</head>
-	<body class="noise bg-ink bg-site text-white antialiased">
-		<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
-			<nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Navigation principale">
-				<a href="#accueil" class="text-xl font-black tracking-wide">Mav<span class="text-racing">.</span> RS Auto</a>
-				<button
-					id="menu-button"
-					class="rounded border border-line p-2 text-white md:hidden"
-					type="button"
-					aria-expanded="false"
-					aria-controls="mobile-menu"
-				>
-					<span class="sr-only">Ouvrir le menu</span>
-					<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-						<path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+	<body>
+		<!-- Shared graphics: the speed streaks of the logo (exact paths) -->
+		<svg class="sprite" aria-hidden="true" focusable="false">
+			<defs>
+				<linearGradient id="streak-grad" x1="0" x2="1">
+					<stop offset="0" stop-color="#e11d2e" stop-opacity="0" />
+					<stop offset="0.62" stop-color="#e11d2e" />
+					<stop offset="1" stop-color="#e11d2e" />
+				</linearGradient>
+				<symbol id="streaks" viewBox="-152 -2 154 104">
+					<g transform="skewX(-14)" fill="url(#streak-grad)">
+						<path d="M0.00,0.00 L0.00,20.00 L-150.00,20.00 L-150.00,0.00 Z" />
+						<path d="M0.00,28.00 L0.00,48.00 L-118.00,48.00 L-118.00,28.00 Z" />
+						<path d="M0.00,56.00 L0.00,76.00 L-80.00,76.00 L-80.00,56.00 Z" />
+						<path d="M0.00,84.00 L0.00,100.00 L-44.00,100.00 L-44.00,84.00 Z" />
+					</g>
+				</symbol>
+			</defs>
+		</svg>
+
+		<a class="skip" href="#contenu">Aller au contenu</a>
+
+		<header id="site-header" class="hdr">
+			<div class="hdr__glass" aria-hidden="true"><span class="hdr__progress"></span></div>
+			<div class="hdr__bar">
+				<a href="#accueil" class="hdr__logo" aria-label="Mav. RS Auto, retour à l’accueil">
+					<svg class="wordmark" viewBox="-152 -2 564 104" aria-hidden="true" focusable="false">
+						<defs>
+							<linearGradient id="mavg-h" x1="0" x2="1">
+								<stop offset="0" stop-color="#e11d2e" stop-opacity="0" />
+								<stop offset="0.62" stop-color="#e11d2e" />
+								<stop offset="1" stop-color="#e11d2e" />
+							</linearGradient>
+						</defs>
+						<g transform="skewX(-14)">
+							<path class="wm-streak" style="--i: 0" d="M0.00,0.00 L0.00,20.00 L-150.00,20.00 L-150.00,0.00 Z" fill="url(#mavg-h)" />
+							<path class="wm-streak" style="--i: 1" d="M0.00,28.00 L0.00,48.00 L-118.00,48.00 L-118.00,28.00 Z" fill="url(#mavg-h)" />
+							<path class="wm-streak" style="--i: 2" d="M0.00,56.00 L0.00,76.00 L-80.00,76.00 L-80.00,56.00 Z" fill="url(#mavg-h)" />
+							<path class="wm-streak" style="--i: 3" d="M0.00,84.00 L0.00,100.00 L-44.00,100.00 L-44.00,84.00 Z" fill="url(#mavg-h)" />
+							<path
+								d="M24.00,42.00 L59.00,90.00 L73.00,90.00 L108.00,42.00 L108.00,100.00 L132.00,100.00 L132.00,0.00 L102.00,0.00 L66.00,50.00 L30.00,0.00 L0.00,0.00 L0.00,20.00 L25.00,20.00 L25.00,28.00 L0.00,28.00 L0.00,48.00 L24.00,48.00 Z M199.00,24.00 L234.00,100.00 L260.00,100.00 L214.00,0.00 L184.00,0.00 L138.00,100.00 L164.00,100.00 Z M336.00,100.00 L382.00,0.00 L356.00,0.00 L322.00,76.00 L288.00,0.00 L262.00,0.00 L308.00,100.00 Z M0.00,56.00 L0.00,76.00 L24.00,76.00 L24.00,56.00 Z M0.00,84.00 L0.00,100.00 L24.00,100.00 L24.00,84.00 Z"
+								fill="#ffffff"
+							/>
+							<path class="wm-red" d="M218.03,74.00 L209.74,56.00 L188.26,56.00 L179.97,74.00 Z M388.00,78.00 L388.00,100.00 L410.00,100.00 L410.00,78.00 Z" fill="#e11d2e" />
+						</g>
+						<path class="wm-tag" d="M1.84 0V-13.05H12.18Q13.57 -13.05 14.45 -12.49Q15.33 -11.93 15.77 -11.01Q16.21 -10.09 16.21 -8.97Q16.21 -7.81 15.61 -6.79Q15.01 -5.78 13.76 -5.21L16.53 0H13.28L10.89 -4.66H4.73V0ZM4.73 -7.05H11.38Q12.27 -7.05 12.76 -7.57Q13.24 -8.09 13.24 -8.91Q13.24 -9.46 13.03 -9.85Q12.82 -10.24 12.41 -10.44Q11.99 -10.64 11.38 -10.64H4.73ZM38.99 0.23Q37.51 0.23 36.21 0.05Q34.92 -0.13 33.95 -0.6Q32.98 -1.06 32.44 -1.9Q31.9 -2.74 31.9 -4.05Q31.9 -4.08 31.9 -4.14Q31.9 -4.2 31.92 -4.24H34.77Q34.75 -4.16 34.74 -4.06Q34.73 -3.95 34.73 -3.82Q34.73 -3.23 35.25 -2.86Q35.76 -2.49 36.71 -2.32Q37.66 -2.15 38.93 -2.15Q39.48 -2.15 40.04 -2.19Q40.6 -2.24 41.12 -2.34Q41.63 -2.43 42.04 -2.6Q42.45 -2.77 42.68 -3.03Q42.92 -3.29 42.92 -3.63Q42.92 -4.12 42.47 -4.42Q42.03 -4.71 41.27 -4.9Q40.51 -5.09 39.56 -5.22Q38.61 -5.36 37.59 -5.52Q36.58 -5.68 35.62 -5.96Q34.68 -6.23 33.92 -6.67Q33.16 -7.11 32.71 -7.8Q32.26 -8.49 32.26 -9.5Q32.26 -10.41 32.7 -11.11Q33.14 -11.82 33.99 -12.3Q34.85 -12.79 36.09 -13.03Q37.34 -13.28 38.95 -13.28Q40.58 -13.28 41.8 -13.02Q43.02 -12.75 43.81 -12.25Q44.61 -11.76 45 -11.07Q45.39 -10.37 45.39 -9.52V-9.21H42.58V-9.46Q42.58 -9.88 42.12 -10.2Q41.67 -10.53 40.89 -10.72Q40.11 -10.91 39.12 -10.91Q37.75 -10.91 36.9 -10.73Q36.04 -10.56 35.64 -10.27Q35.25 -9.97 35.25 -9.61Q35.25 -9.18 35.69 -8.91Q36.14 -8.64 36.9 -8.48Q37.66 -8.32 38.61 -8.19Q39.56 -8.06 40.57 -7.88Q41.59 -7.71 42.54 -7.45Q43.49 -7.18 44.25 -6.74Q45.01 -6.29 45.46 -5.61Q45.9 -4.94 45.9 -3.95Q45.9 -2.43 45.03 -1.51Q44.16 -0.59 42.6 -0.18Q41.04 0.23 38.99 0.23ZM80.07 0 86.6 -13.05H89.87L96.41 0H93.23L92 -2.53H84.27L83.03 0ZM85.41 -4.86H90.86L89.34 -8.06Q89.24 -8.27 89.06 -8.67Q88.88 -9.08 88.7 -9.51Q88.52 -9.94 88.38 -10.25Q88.24 -10.56 88.22 -10.58H88.06Q87.89 -10.2 87.68 -9.71Q87.46 -9.21 87.26 -8.76Q87.06 -8.3 86.92 -8.04ZM119.13 0.23Q116.68 0.23 115.07 -0.53Q113.47 -1.29 112.68 -2.69Q111.89 -4.08 111.89 -5.98V-13.05H114.78V-6.12Q114.78 -4.24 115.91 -3.21Q117.04 -2.19 119.13 -2.19Q121.22 -2.19 122.35 -3.21Q123.48 -4.24 123.48 -6.12V-13.05H126.37V-5.98Q126.37 -4.08 125.58 -2.69Q124.79 -1.29 123.2 -0.53Q121.6 0.23 119.13 0.23ZM147.69 0V-10.51H141.89V-13.05H156.37V-10.51H150.57V0ZM179.83 0.23Q177.24 0.23 175.36 -0.56Q173.47 -1.35 172.45 -2.86Q171.44 -4.37 171.44 -6.53Q171.44 -8.7 172.45 -10.2Q173.47 -11.7 175.36 -12.49Q177.24 -13.28 179.83 -13.28Q182.44 -13.28 184.32 -12.49Q186.2 -11.7 187.22 -10.2Q188.23 -8.7 188.23 -6.53Q188.23 -4.37 187.22 -2.86Q186.2 -1.35 184.32 -0.56Q182.44 0.23 179.83 0.23ZM179.83 -2.19Q181.01 -2.19 182 -2.45Q182.99 -2.72 183.72 -3.23Q184.45 -3.74 184.86 -4.52Q185.27 -5.3 185.27 -6.33V-6.76Q185.27 -7.78 184.86 -8.56Q184.45 -9.33 183.72 -9.84Q182.99 -10.36 182 -10.61Q181.01 -10.87 179.83 -10.87Q178.66 -10.87 177.67 -10.61Q176.68 -10.36 175.95 -9.84Q175.22 -9.33 174.82 -8.56Q174.42 -7.78 174.42 -6.76V-6.33Q174.42 -5.3 174.82 -4.52Q175.22 -3.74 175.95 -3.23Q176.68 -2.72 177.67 -2.45Q178.66 -2.19 179.83 -2.19Z" transform="translate(192.49 150)" fill="#c9ccd3"/>
 					</svg>
-				</button>
-				<div class="hidden items-center gap-8 text-sm font-medium text-zinc-300 md:flex">
-					<a class="hover:text-white" href="#accueil">Accueil</a>
-					<a class="hover:text-white" href="#services">Services</a>
-					<a class="hover:text-white" href="#apropos">À propos</a>
-					<a class="hover:text-white" href="#localisation">Localisation</a>
-					<a class="hover:text-white" href="#contact">Contact</a>
-				</div>
-			</nav>
-			<div
-				id="mobile-menu"
-				class="max-h-0 overflow-hidden border-t border-transparent bg-ink/95 px-4 opacity-0 backdrop-blur transition-all duration-300 ease-out pointer-events-none md:hidden"
-			>
-				<div class="grid gap-3 pt-4 text-sm text-zinc-200">
+				</a>
+
+				<nav class="hdr__nav" aria-label="Navigation principale">
 					<a href="#accueil">Accueil</a>
 					<a href="#services">Services</a>
 					<a href="#apropos">À propos</a>
 					<a href="#localisation">Localisation</a>
 					<a href="#contact">Contact</a>
-				</div>
+				</nav>
+
+				<a class="btn btn--red btn--call" href="tel:+33682141054">
+					<svg class="ico-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path
+							d="M6.6 3.5h3l1.5 4.2-2.1 1.4a11 11 0 0 0 5.9 5.9l1.4-2.1 4.2 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"
+						/>
+					</svg>
+					<span>06 82 14 10 54</span>
+				</a>
+
+				<button id="menu-button" class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu">
+					<span class="sr-only" data-label>Ouvrir le menu</span>
+					<span class="burger__lines" aria-hidden="true"><i></i><i></i><i></i></span>
+				</button>
+			</div>
+
+			<div id="mobile-menu" class="mmenu">
+				<nav class="mmenu__nav" aria-label="Navigation mobile">
+					<a href="#accueil"><span class="tl">01</span>Accueil</a>
+					<a href="#services"><span class="tl">02</span>Services</a>
+					<a href="#apropos"><span class="tl">03</span>À propos</a>
+					<a href="#localisation"><span class="tl">04</span>Localisation</a>
+					<a class="mmenu__cta" href="#contact">Contact</a>
+				</nav>
+				<svg class="mmenu__streaks" aria-hidden="true" focusable="false"><use href="#streaks" /></svg>
 			</div>
 		</header>
 
-		<main class="relative z-10">
-			<section id="accueil" class="hero-section relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-28 lg:pt-40">
-				<div class="hero-grid mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
-					<div class="hero-copy reveal order-2 opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none lg:order-1">
-						<h1 class="max-w-4xl text-3xl font-black leading-tight sm:text-6xl lg:text-7xl">
-							Savoir-faire, fiabilité et passion pour votre auto
+		<main id="contenu" tabindex="-1">
+			<!-- ============================== 01 HERO ============================== -->
+			<section id="accueil" class="hero" aria-labelledby="hero-title">
+				<div class="hero__marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				<div class="hero__inner">
+					<div class="hero__copy">
+						<h1 id="hero-title" class="display hero__title">
+							<span class="w" style="--i: 0"><span>Savoir-faire,</span></span>
+							<span class="w" style="--i: 1"><span>fiabilité</span></span>
+							<span class="w" style="--i: 2"><span>et</span></span>
+							<span class="w" style="--i: 3"><span>passion</span></span>
+							<span class="w" style="--i: 4"><span>pour</span></span>
+							<span class="w" style="--i: 5"><span>votre</span></span>
+							<span class="w" style="--i: 6"><span>auto</span></span>
 						</h1>
-						<p class="mt-5 max-w-2xl text-base leading-7 text-zinc-300 sm:mt-6 sm:text-lg sm:leading-8">
-							Garage indépendant à Maubourguet, Mav<span class="text-racing">.</span> RS Auto accompagne l’entretien, le diagnostic et
+						<p class="hero__lead">
+							Garage indépendant à Maubourguet, Mav<span class="dot">.</span> RS Auto accompagne l’entretien, le diagnostic et
 							l’optimisation de votre véhicule avec une approche soignée et passionnée.
 						</p>
-						<div class="mt-8 flex flex-col gap-4 sm:mt-9 sm:flex-row">
-							<a
-								href="#contact"
-								class="rounded-full bg-racing px-7 py-4 text-center font-bold text-white shadow-glow transition hover:bg-red-600"
-							>
-								Contacter Mav RS Auto
-							</a>
-							<a
-								href="#services"
-								class="rounded-full border border-line bg-white/5 px-7 py-4 text-center font-bold text-white backdrop-blur transition hover:bg-white/10"
-							>
-								Voir les services
-							</a>
+						<div class="hero__ctas">
+							<a class="btn btn--red" href="#contact"><span>Contacter Mav RS Auto</span></a>
+							<a class="btn btn--metal" href="#services"><span>Voir les services</span></a>
 						</div>
 					</div>
-					<div class="hero-meter reveal order-1 opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none relative mx-auto w-full max-w-sm lg:order-2 lg:max-w-none">
-						<div class="absolute -inset-8 rounded-full bg-racing/25 blur-3xl"></div>
-						<div class="relative overflow-hidden rounded-lg border border-white/15 bg-[#111111] p-1 shadow-soft">
-							<div class="hero-meter-box relative aspect-square rounded-md border border-white/10 bg-[#111111] p-4 sm:aspect-[4/3] sm:p-6">
-								<div class="flex h-full flex-col items-center justify-center">
-									<div class="relative font-[Poppins,sans-serif]">
-										<svg class="block h-auto w-full max-w-[260px] sm:max-w-[349px]" width="349" height="266" viewBox="0 0 349 266" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path
-												id="meter-bg-bar" class="animate-dash motion-reduce:animate-none" stroke-dasharray="615"
-												d="M50.8884 250C37.0172 227.815 29 201.594 29 173.5C29 93.6949 93.6949 29 173.5 29C253.305 29 318 93.6949 318 173.5C318 201.594 309.983 227.815 296.112 250"
-												stroke="#e11d2e"
-												stroke-width="57"
-											/>
-											<path
-												id="meter-frame"
-												fill-rule="evenodd"
-												clip-rule="evenodd"
-												d="M348 0H0V266H348V0ZM1 173.5C1 205.845 9.90209 236.11 25.3898 261.98C25.8674 262.778 26.9495 262.943 27.6503 262.332C28.2018 261.851 28.3263 261.044 27.9507 260.416C12.7415 235.002 4 205.272 4 173.5C4 79.8877 79.8877 4 173.5 4C267.112 4 343 79.8877 343 173.5C343 205.272 334.258 235.002 319.049 260.416C318.674 261.044 318.798 261.851 319.35 262.332C320.051 262.943 321.133 262.778 321.61 261.98C337.098 236.11 346 205.845 346 173.5C346 78.2309 268.769 1 173.5 1C78.2309 1 1 78.2309 1 173.5ZM191.694 15.0084C191.754 14.4594 191.358 13.9658 190.809 13.9059C190.26 13.846 189.766 14.2425 189.706 14.7915L188.506 25.7915C188.446 26.3406 188.843 26.8342 189.392 26.8941C189.941 26.954 190.434 26.5575 190.494 26.0084L191.694 15.0084ZM13.8058 157.192C13.8657 156.643 14.3593 156.246 14.9083 156.306L25.9083 157.506C26.4574 157.566 26.8539 158.059 26.794 158.608C26.7341 159.157 26.2405 159.554 25.6914 159.494L14.6914 158.294C14.1424 158.234 13.7459 157.741 13.8058 157.192ZM321.208 188.506C320.659 188.446 320.165 188.842 320.106 189.392C320.046 189.941 320.442 190.434 320.991 190.494L331.991 191.694C332.54 191.754 333.034 191.357 333.094 190.808C333.154 190.259 332.757 189.766 332.208 189.706L321.208 188.506ZM207.302 16.6205C207.842 16.7318 208.191 17.2605 208.08 17.8014L205.88 28.5014C205.768 29.0424 205.24 29.3908 204.699 29.2796C204.158 29.1683 203.809 28.6396 203.921 28.0987L206.121 17.3987C206.232 16.8577 206.761 16.5093 207.302 16.6205ZM17.6103 139.822C17.0703 139.706 16.5385 140.05 16.4224 140.59C16.3064 141.13 16.65 141.662 17.19 141.778L27.89 144.078C28.4299 144.194 28.9617 143.85 29.0778 143.31C29.1938 142.77 28.8502 142.238 28.3103 142.122L17.6103 139.822ZM317.72 204.699C317.832 204.158 318.36 203.809 318.901 203.92L329.601 206.12C330.142 206.232 330.491 206.76 330.379 207.301C330.268 207.842 329.739 208.191 329.198 208.079L318.499 205.879C317.958 205.768 317.609 205.24 317.72 204.699ZM224.25 22.3108C224.422 21.7858 224.135 21.2211 223.61 21.0495C223.085 20.8779 222.521 21.1643 222.349 21.6893L218.949 32.0893C218.778 32.6142 219.064 33.1789 219.589 33.3505C220.114 33.5221 220.679 33.2357 220.85 32.7108L224.25 22.3108ZM20.648 124.392C20.8182 123.866 21.382 123.578 21.9075 123.749L32.4075 127.149C32.9329 127.319 33.2209 127.883 33.0508 128.408C32.8806 128.933 32.3167 129.221 31.7913 129.051L21.2913 125.651C20.7659 125.481 20.4779 124.917 20.648 124.392ZM314.91 218.95C314.385 218.778 313.821 219.064 313.649 219.589C313.477 220.114 313.764 220.679 314.289 220.851L324.689 224.251C325.214 224.422 325.778 224.136 325.95 223.611C326.122 223.086 325.835 222.521 325.31 222.35L314.91 218.95ZM239.202 27.0847C239.708 27.3071 239.937 27.8972 239.715 28.4027L235.315 38.4027C235.093 38.9083 234.502 39.1377 233.997 38.9153C233.491 38.6929 233.262 38.1028 233.484 37.5973L237.884 27.5973C238.107 27.0918 238.697 26.8623 239.202 27.0847ZM28.0021 108.185C27.4966 107.962 26.9065 108.192 26.6841 108.697C26.4616 109.203 26.6911 109.793 27.1966 110.015L37.1966 114.415C37.7021 114.638 38.2923 114.408 38.5147 113.903C38.7371 113.397 38.5076 112.807 38.0021 112.585L28.0021 108.185ZM308.085 233.997C308.307 233.492 308.897 233.262 309.403 233.485L319.403 237.885C319.909 238.107 320.138 238.697 319.916 239.203C319.693 239.708 319.103 239.938 318.598 239.715L308.598 235.315C308.092 235.093 307.863 234.503 308.085 233.997ZM268.507 45.3898C268.833 44.9438 268.736 44.3182 268.29 43.9924C267.844 43.6667 267.218 43.7642 266.892 44.2102L260.392 53.1102C260.066 53.5562 260.164 54.1818 260.61 54.5076C261.056 54.8333 261.682 54.7358 262.007 54.2898L268.507 45.3898ZM43.3879 79.6162C43.7103 79.1678 44.3352 79.0657 44.7836 79.3881L53.6836 85.7881C54.132 86.1106 54.2341 86.7355 53.9117 87.1839C53.5892 87.6322 52.9643 87.7343 52.516 87.4119L43.616 81.0119C43.1676 80.6895 43.0655 80.0646 43.3879 79.6162ZM281.342 55.9699C281.712 55.5599 281.68 54.9276 281.27 54.5575C280.86 54.1875 280.227 54.22 279.857 54.63L272.457 62.83C272.087 63.24 272.12 63.8723 272.53 64.2423C272.94 64.6123 273.572 64.5799 273.942 64.1699L281.342 55.9699ZM53.8527 66.535C54.2199 66.1225 54.852 66.0858 55.2645 66.4531L63.4646 73.7531C63.8771 74.1203 63.9138 74.7524 63.5465 75.1649C63.1793 75.5774 62.5472 75.6141 62.1347 75.2469L53.9347 67.9469C53.5222 67.5796 53.4855 66.9475 53.8527 66.535ZM293.065 67.9469C293.477 67.5796 293.514 66.9475 293.147 66.535C292.779 66.1225 292.147 66.0858 291.735 66.4531L283.535 73.7531C283.122 74.1203 283.086 74.7524 283.453 75.1649C283.82 75.5774 284.452 75.6141 284.865 75.2469L293.065 67.9469ZM65.7299 54.5575C66.14 54.1875 66.7723 54.22 67.1423 54.63L74.5423 62.83C74.9123 63.24 74.8799 63.8723 74.4699 64.2423C74.0599 64.6123 73.4275 64.5799 73.0575 64.1699L65.6575 55.9699C65.2875 55.5599 65.3199 54.9276 65.7299 54.5575ZM303.384 81.0119C303.832 80.6895 303.934 80.0646 303.612 79.6162C303.289 79.1678 302.665 79.0657 302.216 79.3881L293.316 85.7881C292.868 86.1106 292.766 86.7355 293.088 87.1839C293.411 87.6322 294.035 87.7343 294.484 87.4119L303.384 81.0119ZM78.7101 43.9924C79.1561 43.6667 79.7817 43.7642 80.1074 44.2102L86.6074 53.1102C86.9332 53.5562 86.8357 54.1818 86.3897 54.5076C85.9437 54.8333 85.318 54.7358 84.9923 54.2898L78.4923 45.3898C78.1666 44.9438 78.2641 44.3182 78.7101 43.9924ZM38.4025 235.315C38.908 235.093 39.1375 234.503 38.9151 233.997C38.6926 233.492 38.1025 233.262 37.597 233.485L27.597 237.885C27.0915 238.107 26.862 238.697 27.0844 239.203C27.3069 239.708 27.897 239.938 28.4025 239.715L38.4025 235.315ZM320.315 108.697C320.537 109.203 320.308 109.793 319.802 110.015L309.802 114.415C309.297 114.638 308.707 114.408 308.484 113.903C308.262 113.397 308.491 112.807 308.997 112.585L318.997 108.185C319.502 107.962 320.093 108.192 320.315 108.697ZM109.115 27.5973C108.892 27.0918 108.302 26.8623 107.797 27.0847C107.291 27.3071 107.062 27.8972 107.284 28.4027L111.684 38.4027C111.907 38.9083 112.497 39.1377 113.002 38.9153C113.508 38.6929 113.737 38.1028 113.515 37.5973L109.115 27.5973ZM33.3503 219.589C33.5219 220.114 33.2355 220.679 32.7105 220.851L22.3105 224.251C21.7856 224.422 21.2209 224.136 21.0493 223.611C20.8777 223.086 21.1641 222.521 21.689 222.35L32.089 218.95C32.614 218.778 33.1787 219.064 33.3503 219.589ZM325.708 125.651C326.233 125.481 326.521 124.917 326.351 124.392C326.181 123.866 325.617 123.578 325.092 123.749L314.592 127.149C314.066 127.319 313.778 127.883 313.948 128.408C314.118 128.933 314.682 129.221 315.208 129.051L325.708 125.651ZM123.389 21.0495C123.914 20.8779 124.478 21.1643 124.65 21.6893L128.05 32.0893C128.222 32.6142 127.935 33.1789 127.41 33.3505C126.885 33.5221 126.321 33.2357 126.149 32.7108L122.749 22.3108C122.577 21.7858 122.864 21.2211 123.389 21.0495ZM28.5012 205.879C29.0422 205.768 29.3905 205.24 29.2793 204.699C29.1681 204.158 28.6394 203.809 28.0984 203.92L17.3984 206.12C16.8574 206.232 16.5091 206.76 16.6203 207.301C16.7315 207.842 17.2602 208.191 17.8012 208.079L28.5012 205.879ZM330.578 140.59C330.694 141.13 330.35 141.662 329.81 141.778L319.11 144.078C318.57 144.194 318.039 143.85 317.922 143.31C317.806 142.77 318.15 142.238 318.69 142.122L329.39 139.822C329.93 139.706 330.462 140.05 330.578 140.59ZM140.88 17.3987C140.768 16.8577 140.24 16.5093 139.699 16.6205C139.158 16.7318 138.809 17.2605 138.921 17.8014L141.121 28.5014C141.232 29.0424 141.761 29.3908 142.302 29.2796C142.842 29.1683 143.191 28.6396 143.08 28.0987L140.88 17.3987ZM26.8941 189.392C26.954 189.941 26.5575 190.434 26.0084 190.494L15.0084 191.694C14.4594 191.754 13.9658 191.357 13.9059 190.808C13.846 190.259 14.2425 189.766 14.7915 189.706L25.7915 188.506C26.3406 188.446 26.8342 188.842 26.8941 189.392ZM332.308 158.294C332.857 158.234 333.254 157.741 333.194 157.192C333.134 156.643 332.64 156.246 332.091 156.306L321.091 157.506C320.542 157.566 320.146 158.059 320.206 158.608C320.266 159.157 320.759 159.554 321.308 159.494L332.308 158.294ZM156.191 13.9059C156.74 13.846 157.234 14.2425 157.294 14.7915L158.494 25.7915C158.554 26.3406 158.157 26.8342 157.608 26.8941C157.059 26.954 156.566 26.5575 156.506 26.0084L155.306 15.0084C155.246 14.4594 155.642 13.9658 156.191 13.9059ZM175 14C175 13.4477 174.552 13 174 13C173.448 13 173 13.4477 173 14V48C173 48.5523 173.448 49 174 49C174.552 49 175 48.5523 175 48V14ZM13 174C13 173.448 13.4477 173 14 173H48C48.5523 173 49 173.448 49 174C49 174.552 48.5523 175 48 175H14C13.4477 175 13 174.552 13 174ZM299 173C298.448 173 298 173.448 298 174C298 174.552 298.448 175 299 175H333C333.552 175 334 174.552 334 174C334 173.448 333.552 173 333 173H299ZM254.2 34.7336C254.678 35.0093 254.843 35.6208 254.567 36.0993L237.567 65.5993C237.291 66.0778 236.68 66.2422 236.201 65.9665C235.723 65.6907 235.558 65.0792 235.834 64.6007L252.834 35.1007C253.11 34.6222 253.721 34.4578 254.2 34.7336ZM64.4993 235.834C64.9774 235.558 65.5891 235.721 65.8655 236.199C66.142 236.677 65.9785 237.289 65.5004 237.566L36.1004 254.566C35.6223 254.842 35.0106 254.679 34.7341 254.2C34.4577 253.722 34.6212 253.111 35.0993 252.834L64.4993 235.834ZM312.766 93.6994C313.042 94.1775 312.879 94.7892 312.401 95.0657L283.001 112.066C282.523 112.342 281.911 112.179 281.634 111.701C281.358 111.222 281.521 110.611 282 110.334L311.4 93.3343C311.878 93.0578 312.489 93.2213 312.766 93.6994ZM94.1664 35.1007C93.8906 34.6222 93.2792 34.4578 92.8007 34.7336C92.3222 35.0093 92.1578 35.6208 92.4335 36.0993L109.434 65.5993C109.709 66.0778 110.321 66.2422 110.799 65.9665C111.278 65.6907 111.442 65.0792 111.166 64.6007L94.1664 35.1007ZM34.2338 93.7007C34.5096 93.2222 35.121 93.0578 35.5996 93.3336L65.0996 110.334C65.5781 110.609 65.7425 111.221 65.4667 111.699C65.1909 112.178 64.5795 112.342 64.101 112.066L34.601 95.0664C34.1225 94.7907 33.9581 94.1792 34.2338 93.7007ZM282.501 235.834C282.023 235.558 281.411 235.721 281.134 236.199C280.858 236.678 281.021 237.289 281.5 237.566L310.9 254.566C311.378 254.842 311.989 254.679 312.266 254.201C312.542 253.722 312.379 253.111 311.901 252.834L282.501 235.834Z"
-												fill="#111111"
-											/>
-											<path
-												id="inner-circle"
-												d="M174.062 238.872C208.856 238.872 237.062 210.666 237.062 175.872C237.062 141.078 208.856 112.872 174.062 112.872C139.269 112.872 111.062 141.078 111.062 175.872C111.062 210.666 139.269 238.872 174.062 238.872Z"
-												stroke="#87888C"
-												stroke-opacity="0.15"
-												stroke-width="4"
-											/>
-											<path
-												id="km-20"
-												d="M75.0303 230.392C76.0543 229.507 76.8596 228.781 77.4463 228.216C78.0436 227.64 78.5396 227.043 78.9343 226.424C79.329 225.805 79.5263 225.187 79.5263 224.568C79.5263 223.928 79.3716 223.427 79.0623 223.064C78.7636 222.701 78.289 222.52 77.6383 222.52C77.009 222.52 76.5183 222.723 76.1663 223.128C75.825 223.523 75.6436 224.056 75.6223 224.728H73.8623C73.8943 223.512 74.257 222.584 74.9503 221.944C75.6543 221.293 76.545 220.968 77.6223 220.968C78.785 220.968 79.6916 221.288 80.3423 221.928C81.0036 222.568 81.3343 223.421 81.3343 224.488C81.3343 225.256 81.137 225.997 80.7423 226.712C80.3583 227.416 79.8943 228.051 79.3503 228.616C78.817 229.171 78.1343 229.816 77.3023 230.552L76.5823 231.192H81.6543V232.712H73.8783V231.384L75.0303 230.392ZM83.2567 226.888C83.2567 225.043 83.566 223.603 84.1847 222.568C84.814 221.523 85.8913 221 87.4167 221C88.942 221 90.014 221.523 90.6327 222.568C91.262 223.603 91.5767 225.043 91.5767 226.888C91.5767 228.755 91.262 230.216 90.6327 231.272C90.014 232.317 88.942 232.84 87.4167 232.84C85.8913 232.84 84.814 232.317 84.1847 231.272C83.566 230.216 83.2567 228.755 83.2567 226.888ZM89.7847 226.888C89.7847 226.024 89.726 225.293 89.6087 224.696C89.502 224.099 89.278 223.613 88.9367 223.24C88.5953 222.856 88.0887 222.664 87.4167 222.664C86.7447 222.664 86.238 222.856 85.8967 223.24C85.5553 223.613 85.326 224.099 85.2087 224.696C85.102 225.293 85.0487 226.024 85.0487 226.888C85.0487 227.784 85.102 228.536 85.2087 229.144C85.3153 229.752 85.5393 230.243 85.8807 230.616C86.2327 230.989 86.7447 231.176 87.4167 231.176C88.0887 231.176 88.5953 230.989 88.9367 230.616C89.2887 230.243 89.518 229.752 89.6247 229.144C89.7313 228.536 89.7847 227.784 89.7847 226.888Z"
-												fill="white"
-											/>
-											<path
-												id="km-40"
-												d="M56.7988 179.44V178.064L62.1748 170.352H64.3828V177.856H65.8708V179.44H64.3828V181.872H62.5908V179.44H56.7988ZM62.6708 172.208L58.8948 177.856H62.6708V172.208ZM67.3822 175.888C67.3822 174.043 67.6915 172.603 68.3102 171.568C68.9395 170.523 70.0168 170 71.5422 170C73.0675 170 74.1395 170.523 74.7582 171.568C75.3875 172.603 75.7022 174.043 75.7022 175.888C75.7022 177.755 75.3875 179.216 74.7582 180.272C74.1395 181.317 73.0675 181.84 71.5422 181.84C70.0168 181.84 68.9395 181.317 68.3102 180.272C67.6915 179.216 67.3822 177.755 67.3822 175.888ZM73.9102 175.888C73.9102 175.024 73.8515 174.293 73.7342 173.696C73.6275 173.099 73.4035 172.613 73.0622 172.24C72.7208 171.856 72.2142 171.664 71.5422 171.664C70.8702 171.664 70.3635 171.856 70.0222 172.24C69.6808 172.613 69.4515 173.099 69.3342 173.696C69.2275 174.293 69.1742 175.024 69.1742 175.888C69.1742 176.784 69.2275 177.536 69.3342 178.144C69.4408 178.752 69.6648 179.243 70.0062 179.616C70.3582 179.989 70.8702 180.176 71.5422 180.176C72.2142 180.176 72.7208 179.989 73.0622 179.616C73.4142 179.243 73.6435 178.752 73.7502 178.144C73.8568 177.536 73.9102 176.784 73.9102 175.888Z"
-												fill="white"
-											/>
-											<path
-												id="km-60"
-												d="M81.2941 112.912C81.1768 112.421 80.9634 112.053 80.6541 111.808C80.3448 111.563 79.9128 111.44 79.3581 111.44C78.5154 111.44 77.8861 111.765 77.4701 112.416C77.0541 113.056 76.8354 114.123 76.8141 115.616C77.0914 115.147 77.4968 114.784 78.0301 114.528C78.5634 114.272 79.1394 114.144 79.7581 114.144C80.4621 114.144 81.0808 114.299 81.6141 114.608C82.1581 114.907 82.5794 115.344 82.8781 115.92C83.1874 116.496 83.3421 117.184 83.3421 117.984C83.3421 118.731 83.1928 119.397 82.8941 119.984C82.6061 120.571 82.1741 121.035 81.5981 121.376C81.0221 121.707 80.3288 121.872 79.5181 121.872C78.4194 121.872 77.5554 121.632 76.9261 121.152C76.3074 120.661 75.8701 119.973 75.6141 119.088C75.3688 118.203 75.2461 117.099 75.2461 115.776C75.2461 111.872 76.6221 109.92 79.3741 109.92C80.4408 109.92 81.2781 110.208 81.8861 110.784C82.5048 111.36 82.8674 112.069 82.9741 112.912H81.2941ZM79.3581 115.68C78.7074 115.68 78.1528 115.877 77.6941 116.272C77.2461 116.656 77.0221 117.216 77.0221 117.952C77.0221 118.688 77.2301 119.275 77.6461 119.712C78.0728 120.139 78.6648 120.352 79.4221 120.352C80.0941 120.352 80.6221 120.144 81.0061 119.728C81.4008 119.312 81.5981 118.757 81.5981 118.064C81.5981 117.339 81.4061 116.763 81.0221 116.336C80.6488 115.899 80.0941 115.68 79.3581 115.68ZM85.2877 115.888C85.2877 114.043 85.5971 112.603 86.2157 111.568C86.8451 110.523 87.9224 110 89.4477 110C90.9731 110 92.0451 110.523 92.6637 111.568C93.2931 112.603 93.6077 114.043 93.6077 115.888C93.6077 117.755 93.2931 119.216 92.6637 120.272C92.0451 121.317 90.9731 121.84 89.4477 121.84C87.9224 121.84 86.8451 121.317 86.2157 120.272C85.5971 119.216 85.2877 117.755 85.2877 115.888ZM91.8157 115.888C91.8157 115.024 91.7571 114.293 91.6397 113.696C91.5331 113.099 91.3091 112.613 90.9677 112.24C90.6264 111.856 90.1197 111.664 89.4477 111.664C88.7757 111.664 88.2691 111.856 87.9277 112.24C87.5864 112.613 87.3571 113.099 87.2397 113.696C87.1331 114.293 87.0797 115.024 87.0797 115.888C87.0797 116.784 87.1331 117.536 87.2397 118.144C87.3464 118.752 87.5704 119.243 87.9117 119.616C88.2637 119.989 88.7757 120.176 89.4477 120.176C90.1197 120.176 90.6264 119.989 90.9677 119.616C91.3197 119.243 91.5491 118.752 91.6557 118.144C91.7624 117.536 91.8157 116.784 91.8157 115.888Z"
-												fill="white"
-											/>
-											<path
-												id="km-80"
-												d="M118.991 78.776C117.882 78.2213 117.327 77.3467 117.327 76.152C117.327 75.576 117.471 75.048 117.759 74.568C118.047 74.088 118.479 73.7093 119.055 73.432C119.631 73.144 120.335 73 121.167 73C121.988 73 122.687 73.144 123.263 73.432C123.85 73.7093 124.287 74.088 124.575 74.568C124.863 75.048 125.007 75.576 125.007 76.152C125.007 76.7493 124.852 77.2773 124.543 77.736C124.244 78.184 123.844 78.5307 123.343 78.776C123.951 79 124.431 79.368 124.783 79.88C125.135 80.3813 125.311 80.9733 125.311 81.656C125.311 82.3493 125.135 82.9627 124.783 83.496C124.431 84.0293 123.94 84.44 123.311 84.728C122.682 85.016 121.967 85.16 121.167 85.16C120.367 85.16 119.652 85.016 119.023 84.728C118.404 84.44 117.919 84.0293 117.567 83.496C117.215 82.9627 117.039 82.3493 117.039 81.656C117.039 80.9627 117.215 80.3653 117.567 79.864C117.919 79.3627 118.394 79 118.991 78.776ZM123.263 76.376C123.263 75.7787 123.076 75.32 122.703 75C122.33 74.68 121.818 74.52 121.167 74.52C120.527 74.52 120.02 74.68 119.647 75C119.274 75.32 119.087 75.784 119.087 76.392C119.087 76.9253 119.279 77.3627 119.663 77.704C120.058 78.0347 120.559 78.2 121.167 78.2C121.775 78.2 122.276 78.0293 122.671 77.688C123.066 77.3467 123.263 76.9093 123.263 76.376ZM121.167 79.576C120.463 79.576 119.887 79.752 119.439 80.104C119.002 80.4453 118.783 80.9413 118.783 81.592C118.783 82.2 118.996 82.696 119.423 83.08C119.85 83.4533 120.431 83.64 121.167 83.64C121.892 83.64 122.463 83.448 122.879 83.064C123.306 82.68 123.519 82.1893 123.519 81.592C123.519 80.952 123.3 80.456 122.863 80.104C122.436 79.752 121.871 79.576 121.167 79.576ZM127.226 78.888C127.226 77.0427 127.535 75.6027 128.154 74.568C128.783 73.5227 129.861 73 131.386 73C132.911 73 133.983 73.5227 134.602 74.568C135.231 75.6027 135.546 77.0427 135.546 78.888C135.546 80.7547 135.231 82.216 134.602 83.272C133.983 84.3173 132.911 84.84 131.386 84.84C129.861 84.84 128.783 84.3173 128.154 83.272C127.535 82.216 127.226 80.7547 127.226 78.888ZM133.754 78.888C133.754 78.024 133.695 77.2933 133.578 76.696C133.471 76.0987 133.247 75.6133 132.906 75.24C132.565 74.856 132.058 74.664 131.386 74.664C130.714 74.664 130.207 74.856 129.866 75.24C129.525 75.6133 129.295 76.0987 129.178 76.696C129.071 77.2933 129.018 78.024 129.018 78.888C129.018 79.784 129.071 80.536 129.178 81.144C129.285 81.752 129.509 82.2427 129.85 82.616C130.202 82.9893 130.714 83.176 131.386 83.176C132.058 83.176 132.565 82.9893 132.906 82.616C133.258 82.2427 133.487 81.752 133.594 81.144C133.701 80.536 133.754 79.784 133.754 78.888Z"
-												fill="white"
-											/>
-											<path
-												id="km-100"
-												d="M162.783 62.872V61.208H166.111V72.872H164.271V62.872H162.783ZM168.617 66.888C168.617 65.0427 168.926 63.6027 169.545 62.568C170.174 61.5227 171.251 61 172.777 61C174.302 61 175.374 61.5227 175.993 62.568C176.622 63.6027 176.937 65.0427 176.937 66.888C176.937 68.7547 176.622 70.216 175.993 71.272C175.374 72.3173 174.302 72.84 172.777 72.84C171.251 72.84 170.174 72.3173 169.545 71.272C168.926 70.216 168.617 68.7547 168.617 66.888ZM175.145 66.888C175.145 66.024 175.086 65.2933 174.969 64.696C174.862 64.0987 174.638 63.6133 174.297 63.24C173.955 62.856 173.449 62.664 172.777 62.664C172.105 62.664 171.598 62.856 171.257 63.24C170.915 63.6133 170.686 64.0987 170.569 64.696C170.462 65.2933 170.409 66.024 170.409 66.888C170.409 67.784 170.462 68.536 170.569 69.144C170.675 69.752 170.899 70.2427 171.241 70.616C171.593 70.9893 172.105 71.176 172.777 71.176C173.449 71.176 173.955 70.9893 174.297 70.616C174.649 70.2427 174.878 69.752 174.985 69.144C175.091 68.536 175.145 67.784 175.145 66.888ZM178.867 66.888C178.867 65.0427 179.176 63.6027 179.795 62.568C180.424 61.5227 181.501 61 183.027 61C184.552 61 185.624 61.5227 186.243 62.568C186.872 63.6027 187.187 65.0427 187.187 66.888C187.187 68.7547 186.872 70.216 186.243 71.272C185.624 72.3173 184.552 72.84 183.027 72.84C181.501 72.84 180.424 72.3173 179.795 71.272C179.176 70.216 178.867 68.7547 178.867 66.888ZM185.395 66.888C185.395 66.024 185.336 65.2933 185.219 64.696C185.112 64.0987 184.888 63.6133 184.547 63.24C184.205 62.856 183.699 62.664 183.027 62.664C182.355 62.664 181.848 62.856 181.507 63.24C181.165 63.6133 180.936 64.0987 180.819 64.696C180.712 65.2933 180.659 66.024 180.659 66.888C180.659 67.784 180.712 68.536 180.819 69.144C180.925 69.752 181.149 70.2427 181.491 70.616C181.843 70.9893 182.355 71.176 183.027 71.176C183.699 71.176 184.205 70.9893 184.547 70.616C184.899 70.2427 185.128 69.752 185.235 69.144C185.341 68.536 185.395 67.784 185.395 66.888Z"
-												fill="white"
-											/>
-											<path
-												id="km-120"
-												d="M218.783 75.8718V74.2078H222.111V85.8718H220.271V75.8718H218.783ZM225.625 83.3918C226.649 82.5065 227.454 81.7811 228.041 81.2158C228.638 80.6398 229.134 80.0425 229.529 79.4238C229.923 78.8051 230.121 78.1865 230.121 77.5678C230.121 76.9278 229.966 76.4265 229.657 76.0638C229.358 75.7011 228.883 75.5198 228.233 75.5198C227.603 75.5198 227.113 75.7225 226.761 76.1278C226.419 76.5225 226.238 77.0558 226.217 77.7278H224.457C224.489 76.5118 224.851 75.5838 225.545 74.9438C226.249 74.2931 227.139 73.9678 228.217 73.9678C229.379 73.9678 230.286 74.2878 230.937 74.9278C231.598 75.5678 231.929 76.4211 231.929 77.4878C231.929 78.2558 231.731 78.9971 231.337 79.7118C230.953 80.4158 230.489 81.0505 229.945 81.6158C229.411 82.1705 228.729 82.8158 227.897 83.5518L227.177 84.1918H232.249V85.7118H224.473V84.3838L225.625 83.3918ZM233.851 79.8878C233.851 78.0425 234.16 76.6025 234.779 75.5678C235.408 74.5225 236.486 73.9998 238.011 73.9998C239.536 73.9998 240.608 74.5225 241.227 75.5678C241.856 76.6025 242.171 78.0425 242.171 79.8878C242.171 81.7545 241.856 83.2158 241.227 84.2718C240.608 85.3171 239.536 85.8398 238.011 85.8398C236.486 85.8398 235.408 85.3171 234.779 84.2718C234.16 83.2158 233.851 81.7545 233.851 79.8878ZM240.379 79.8878C240.379 79.0238 240.32 78.2931 240.203 77.6958C240.096 77.0985 239.872 76.6131 239.531 76.2398C239.19 75.8558 238.683 75.6638 238.011 75.6638C237.339 75.6638 236.832 75.8558 236.491 76.2398C236.15 76.6131 235.92 77.0985 235.803 77.6958C235.696 78.2931 235.643 79.0238 235.643 79.8878C235.643 80.7838 235.696 81.5358 235.803 82.1438C235.91 82.7518 236.134 83.2425 236.475 83.6158C236.827 83.9891 237.339 84.1758 238.011 84.1758C238.683 84.1758 239.19 83.9891 239.531 83.6158C239.883 83.2425 240.112 82.7518 240.219 82.1438C240.326 81.5358 240.379 80.7838 240.379 79.8878Z"
-												fill="white"
-											/>
-											<path
-												id="km-140"
-												d="M253.783 117.872V116.208H257.111V127.872H255.271V117.872H253.783ZM259.393 125.44V124.064L264.769 116.352H266.977V123.856H268.465V125.44H266.977V127.872H265.185V125.44H259.393ZM265.265 118.208L261.489 123.856H265.265V118.208ZM269.976 121.888C269.976 120.043 270.285 118.603 270.904 117.568C271.533 116.523 272.611 116 274.136 116C275.661 116 276.733 116.523 277.352 117.568C277.981 118.603 278.296 120.043 278.296 121.888C278.296 123.755 277.981 125.216 277.352 126.272C276.733 127.317 275.661 127.84 274.136 127.84C272.611 127.84 271.533 127.317 270.904 126.272C270.285 125.216 269.976 123.755 269.976 121.888ZM276.504 121.888C276.504 121.024 276.445 120.293 276.328 119.696C276.221 119.099 275.997 118.613 275.656 118.24C275.315 117.856 274.808 117.664 274.136 117.664C273.464 117.664 272.957 117.856 272.616 118.24C272.275 118.613 272.045 119.099 271.928 119.696C271.821 120.293 271.768 121.024 271.768 121.888C271.768 122.784 271.821 123.536 271.928 124.144C272.035 124.752 272.259 125.243 272.6 125.616C272.952 125.989 273.464 126.176 274.136 126.176C274.808 126.176 275.315 125.989 275.656 125.616C276.008 125.243 276.237 124.752 276.344 124.144C276.451 123.536 276.504 122.784 276.504 121.888Z"
-												fill="white"
-											/>
-											<path
-												id="km-160"
-												d="M263.783 171.872V170.208H267.111V181.872H265.271V171.872H263.783ZM275.889 172.912C275.771 172.421 275.558 172.053 275.249 171.808C274.939 171.563 274.507 171.44 273.953 171.44C273.11 171.44 272.481 171.765 272.065 172.416C271.649 173.056 271.43 174.123 271.409 175.616C271.686 175.147 272.091 174.784 272.625 174.528C273.158 174.272 273.734 174.144 274.353 174.144C275.057 174.144 275.675 174.299 276.209 174.608C276.753 174.907 277.174 175.344 277.473 175.92C277.782 176.496 277.937 177.184 277.937 177.984C277.937 178.731 277.787 179.397 277.489 179.984C277.201 180.571 276.769 181.035 276.193 181.376C275.617 181.707 274.923 181.872 274.113 181.872C273.014 181.872 272.15 181.632 271.521 181.152C270.902 180.661 270.465 179.973 270.209 179.088C269.963 178.203 269.841 177.099 269.841 175.776C269.841 171.872 271.217 169.92 273.969 169.92C275.035 169.92 275.873 170.208 276.481 170.784C277.099 171.36 277.462 172.069 277.569 172.912H275.889ZM273.953 175.68C273.302 175.68 272.747 175.877 272.289 176.272C271.841 176.656 271.617 177.216 271.617 177.952C271.617 178.688 271.825 179.275 272.241 179.712C272.667 180.139 273.259 180.352 274.017 180.352C274.689 180.352 275.217 180.144 275.601 179.728C275.995 179.312 276.193 178.757 276.193 178.064C276.193 177.339 276.001 176.763 275.617 176.336C275.243 175.899 274.689 175.68 273.953 175.68ZM279.882 175.888C279.882 174.043 280.192 172.603 280.81 171.568C281.44 170.523 282.517 170 284.042 170C285.568 170 286.64 170.523 287.258 171.568C287.888 172.603 288.202 174.043 288.202 175.888C288.202 177.755 287.888 179.216 287.258 180.272C286.64 181.317 285.568 181.84 284.042 181.84C282.517 181.84 281.44 181.317 280.81 180.272C280.192 179.216 279.882 177.755 279.882 175.888ZM286.41 175.888C286.41 175.024 286.352 174.293 286.234 173.696C286.128 173.099 285.904 172.613 285.562 172.24C285.221 171.856 284.714 171.664 284.042 171.664C283.37 171.664 282.864 171.856 282.522 172.24C282.181 172.613 281.952 173.099 281.834 173.696C281.728 174.293 281.674 175.024 281.674 175.888C281.674 176.784 281.728 177.536 281.834 178.144C281.941 178.752 282.165 179.243 282.506 179.616C282.858 179.989 283.37 180.176 284.042 180.176C284.714 180.176 285.221 179.989 285.562 179.616C285.914 179.243 286.144 178.752 286.25 178.144C286.357 177.536 286.41 176.784 286.41 175.888Z"
-												fill="white"
-											/>
-											<path
-												id="km-180"
-												d="M249.783 223.872V222.208H253.111V233.872H251.271V223.872H249.783ZM257.585 227.776C256.475 227.221 255.921 226.347 255.921 225.152C255.921 224.576 256.065 224.048 256.353 223.568C256.641 223.088 257.073 222.709 257.649 222.432C258.225 222.144 258.929 222 259.761 222C260.582 222 261.281 222.144 261.857 222.432C262.443 222.709 262.881 223.088 263.169 223.568C263.457 224.048 263.601 224.576 263.601 225.152C263.601 225.749 263.446 226.277 263.137 226.736C262.838 227.184 262.438 227.531 261.937 227.776C262.545 228 263.025 228.368 263.377 228.88C263.729 229.381 263.905 229.973 263.905 230.656C263.905 231.349 263.729 231.963 263.377 232.496C263.025 233.029 262.534 233.44 261.905 233.728C261.275 234.016 260.561 234.16 259.761 234.16C258.961 234.16 258.246 234.016 257.617 233.728C256.998 233.44 256.513 233.029 256.161 232.496C255.809 231.963 255.633 231.349 255.633 230.656C255.633 229.963 255.809 229.365 256.161 228.864C256.513 228.363 256.987 228 257.585 227.776ZM261.857 225.376C261.857 224.779 261.67 224.32 261.297 224C260.923 223.68 260.411 223.52 259.761 223.52C259.121 223.52 258.614 223.68 258.241 224C257.867 224.32 257.681 224.784 257.681 225.392C257.681 225.925 257.873 226.363 258.257 226.704C258.651 227.035 259.153 227.2 259.761 227.2C260.369 227.2 260.87 227.029 261.265 226.688C261.659 226.347 261.857 225.909 261.857 225.376ZM259.761 228.576C259.057 228.576 258.481 228.752 258.033 229.104C257.595 229.445 257.377 229.941 257.377 230.592C257.377 231.2 257.59 231.696 258.017 232.08C258.443 232.453 259.025 232.64 259.761 232.64C260.486 232.64 261.057 232.448 261.473 232.064C261.899 231.68 262.113 231.189 262.113 230.592C262.113 229.952 261.894 229.456 261.457 229.104C261.03 228.752 260.465 228.576 259.761 228.576ZM265.82 227.888C265.82 226.043 266.129 224.603 266.748 223.568C267.377 222.523 268.455 222 269.98 222C271.505 222 272.577 222.523 273.196 223.568C273.825 224.603 274.14 226.043 274.14 227.888C274.14 229.755 273.825 231.216 273.196 232.272C272.577 233.317 271.505 233.84 269.98 233.84C268.455 233.84 267.377 233.317 266.748 232.272C266.129 231.216 265.82 229.755 265.82 227.888ZM272.348 227.888C272.348 227.024 272.289 226.293 272.172 225.696C272.065 225.099 271.841 224.613 271.5 224.24C271.159 223.856 270.652 223.664 269.98 223.664C269.308 223.664 268.801 223.856 268.46 224.24C268.119 224.613 267.889 225.099 267.772 225.696C267.665 226.293 267.612 227.024 267.612 227.888C267.612 228.784 267.665 229.536 267.772 230.144C267.879 230.752 268.103 231.243 268.444 231.616C268.796 231.989 269.308 232.176 269.98 232.176C270.652 232.176 271.159 231.989 271.5 231.616C271.852 231.243 272.081 230.752 272.188 230.144C272.295 229.536 272.348 228.784 272.348 227.888Z"
-												fill="white"
-											/>
-											<path
-												id="speed-unit"
-												d="M156.505 209.872L152.257 204.292V209.872H149.179V197.236H152.257V202.78L156.469 197.236H160.087L155.191 203.428L160.267 209.872H156.505ZM174.545 199.72C175.793 199.72 176.783 200.098 177.515 200.854C178.259 201.61 178.631 202.66 178.631 204.004V209.872H175.571V204.418C175.571 203.77 175.397 203.272 175.049 202.924C174.713 202.564 174.245 202.384 173.645 202.384C173.045 202.384 172.571 202.564 172.223 202.924C171.887 203.272 171.719 203.77 171.719 204.418V209.872H168.659V204.418C168.659 203.77 168.485 203.272 168.137 202.924C167.801 202.564 167.333 202.384 166.733 202.384C166.133 202.384 165.659 202.564 165.311 202.924C164.975 203.272 164.807 203.77 164.807 204.418V209.872H161.729V199.828H164.807V201.088C165.119 200.668 165.527 200.338 166.031 200.098C166.535 199.846 167.105 199.72 167.741 199.72C168.497 199.72 169.169 199.882 169.757 200.206C170.357 200.53 170.825 200.992 171.161 201.592C171.509 201.04 171.983 200.59 172.583 200.242C173.183 199.894 173.837 199.72 174.545 199.72ZM187.642 192.772L182.818 213.238H179.848L184.672 192.772H187.642ZM195.114 199.72C196.266 199.72 197.19 200.104 197.886 200.872C198.582 201.628 198.93 202.672 198.93 204.004V209.872H195.87V204.418C195.87 203.746 195.696 203.224 195.348 202.852C195 202.48 194.532 202.294 193.944 202.294C193.356 202.294 192.888 202.48 192.54 202.852C192.192 203.224 192.018 203.746 192.018 204.418V209.872H188.94V196.552H192.018V201.178C192.33 200.734 192.756 200.38 193.296 200.116C193.836 199.852 194.442 199.72 195.114 199.72Z"
-												fill="#87888C"
-											/>
-										</svg>
-										<h5 id="speed" class="absolute left-1/2 top-[63%] z-[1] m-0 -translate-x-1/2 -translate-y-1/2 text-3xl font-semibold leading-none text-white sm:text-4xl">100</h5>
-									</div>
-									<div class="mt-6 text-center">
-										<p class="text-2xl font-black tracking-wide text-white sm:text-3xl">Mav<span class="text-racing">.</span> RS Auto</p>
-										<p class="mt-1 text-sm font-bold uppercase tracking-[0.22em] text-zinc-400">Garage indépendant</p>
-									</div>
-								</div>
+
+					<figure class="hero__fig">
+						<svg
+							class="hd"
+							viewBox="-450 -285 880 540"
+							role="img"
+							aria-label="Vue éclatée d’un frein : moyeu, disque ventilé, plaquettes, étrier et vis de fixation"
+						>
+							<g class="rig" transform="rotate(14)"><path class="axis" d="M-430 0H380"/><g class="cote"><path class="ld" pathLength="1" d="M30 -150H112M30 150H112"/><path class="ld" pathLength="1" d="M102 -142V142"/><path class="arw" d="M102 -150l-4 11h8zM102 150l-4 -11h8z"/></g><g class="part" id="p-hub" style="--d:0.05s" transform="translate(200 0)"><path class="ln f0" pathLength="1" d="M32 -24L104 -24A8.6 24 0 0 1 104 24L32 24A8.6 24 0 0 1 32 -24Z"/><ellipse class="ln f1" pathLength="1" cx="32" cy="0" rx="8.6" ry="24"/><path class="ln f0" pathLength="1" d="M22 -60L34 -60A21.6 60 0 0 1 34 60L22 60A21.6 60 0 0 1 22 -60Z"/><ellipse class="ln f1" pathLength="1" cx="22" cy="0" rx="21.6" ry="60"/><path class="ln f0" pathLength="1" d="M-38 -44.6L22 -44.6A1.7 4.6 0 0 1 22 -35.4L-38 -35.4A1.7 4.6 0 0 1 -38 -44.6Z"/><ellipse class="ln f1" pathLength="1" cx="-38" cy="-40" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-24.3 -17L35.7 -17A1.7 4.6 0 0 1 35.7 -7.8L-24.3 -7.8A1.7 4.6 0 0 1 -24.3 -17Z"/><ellipse class="ln f1" pathLength="1" cx="-24.3" cy="-12.4" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-29.5 27.8L30.5 27.8A1.7 4.6 0 0 1 30.5 37L-29.5 37A1.7 4.6 0 0 1 -29.5 27.8Z"/><ellipse class="ln f1" pathLength="1" cx="-29.5" cy="32.4" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-46.5 27.8L13.5 27.8A1.7 4.6 0 0 1 13.5 37L-46.5 37A1.7 4.6 0 0 1 -46.5 27.8Z"/><ellipse class="ln f1" pathLength="1" cx="-46.5" cy="32.4" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-51.7 -17L8.3 -17A1.7 4.6 0 0 1 8.3 -7.8L-51.7 -7.8A1.7 4.6 0 0 1 -51.7 -17Z"/><ellipse class="ln f1" pathLength="1" cx="-51.7" cy="-12.4" rx="1.7" ry="4.6"/></g><g class="part" id="p-pad2" style="--d:0.2s" transform="translate(128 0)"><path class="ln f0" pathLength="1" d="M2.6 -133.3 L-0.7 -128.9 L-1.5 -125.9 L-1.6 -123.9 L3 -101.2 L4 -98.9 L16.7 -98.7 L23.5 -106.5 L27.6 -109.5 L30 -110.7 L32.4 -109.5 L36.5 -106.5 L43.3 -98.7 L55.3 -98.7 L56 -98.9 L56.6 -99.8 L61.4 -122 L61.6 -123.9 L61.2 -127.6 L59.8 -130.1 L54.8 -136.3 L49.6 -141 L47 -142.8 L44.2 -144.2 L38.7 -145.8 L21.2 -145.8 L15.7 -144.2 L10.4 -141.1 L7.7 -138.8Z"/><path class="ln f1" pathLength="1" d="M-0.7 -128.9 L-1.5 -125.9 L-1.4 -122 L3 -101.2 L4 -98.9 L4.7 -98.7 L5.4 -99.3 L9.6 -104.6 L15.6 -109.5 L19.8 -111.4 L24 -112 L28.2 -111.4 L32.4 -109.5 L38.4 -104.6 L43.3 -98.7 L44 -98.9 L44.6 -99.8 L49.4 -122 L49.6 -123.9 L49.2 -127.6 L47.8 -130.1 L42.8 -136.3 L37.6 -141 L35 -142.8 L32.2 -144.2 L26.7 -145.8 L21.3 -145.8 L15.8 -144.2 L13 -142.8 L7.7 -138.8 L2.7 -133.4Z"/><path class="ln lr2" pathLength="1" d="M6.1 -130.9 L5.5 -129.3 L5.5 -127 L7.7 -112.1 L8.7 -110.3 L12.7 -113.8 L15.9 -115.8 L20.7 -117.6 L24 -118 L27.3 -117.6 L30.5 -116.6 L35.3 -113.8 L38.9 -110.5 L39.7 -110.5 L40.3 -112.1 L42.5 -127 L42.5 -129.3 L42.2 -130.3 L41.1 -131.7 L35.5 -136.3 L31.7 -138.4 L27.9 -139.6 L24 -140 L20.2 -139.6 L16.3 -138.4 L12.5 -136.3Z"/></g><g class="part" id="p-disc" style="--d:0.3s" transform="translate(0 0)"><path class="ln f0" pathLength="1" d="M0 -150L22 -150A54 150 0 0 1 22 150L0 150A54 150 0 0 1 0 -150Z"/><path class="ln v" pathLength="1" d="M11.2 -146.7h22M19.4 -140h22M27 -129.9h22M34 -116.6h22M40.1 -100.4h22M45.3 -81.7h22M49.3 -61h22M52.2 -38.8h22M53.7 -15.7h22M53.9 7.9h22M52.8 31.2h22M50.4 53.8h22M46.8 75h22M42 94.4h22M36.1 111.5h22M29.4 125.8h22M22 137h22M14 144.9h22"/><ellipse class="ln f1" pathLength="1" cx="0" cy="0" rx="54" ry="150"/><g transform="scale(0.36 1)"><circle class="lr" r="146"/><circle class="lr" r="124"/><circle class="lr" r="104"/><circle class="lr" r="86"/><g class="spin h"><circle cx="134" cy="0" r="4.2"/><circle cx="114.9" cy="16.1" r="4.2"/><circle cx="94.2" cy="27" r="4.2"/><circle cx="116" cy="67" r="4.2"/><circle cx="91.4" cy="71.4" r="4.2"/><circle cx="68.1" cy="70.5" r="4.2"/><circle cx="67" cy="116" r="4.2"/><circle cx="43.5" cy="107.6" r="4.2"/><circle cx="23.7" cy="95.1" r="4.2"/><circle cx="0" cy="134" r="4.2"/><circle cx="-16.1" cy="114.9" r="4.2"/><circle cx="-27" cy="94.2" r="4.2"/><circle cx="-67" cy="116" r="4.2"/><circle cx="-71.4" cy="91.4" r="4.2"/><circle cx="-70.5" cy="68.1" r="4.2"/><circle cx="-116" cy="67" r="4.2"/><circle cx="-107.6" cy="43.5" r="4.2"/><circle cx="-95.1" cy="23.7" r="4.2"/><circle cx="-134" cy="0" r="4.2"/><circle cx="-114.9" cy="-16.1" r="4.2"/><circle cx="-94.2" cy="-27" r="4.2"/><circle cx="-116" cy="-67" r="4.2"/><circle cx="-91.4" cy="-71.4" r="4.2"/><circle cx="-68.1" cy="-70.5" r="4.2"/><circle cx="-67" cy="-116" r="4.2"/><circle cx="-43.5" cy="-107.6" r="4.2"/><circle cx="-23.7" cy="-95.1" r="4.2"/><circle cx="0" cy="-134" r="4.2"/><circle cx="16.1" cy="-114.9" r="4.2"/><circle cx="27" cy="-94.2" r="4.2"/><circle cx="67" cy="-116" r="4.2"/><circle cx="71.4" cy="-91.4" r="4.2"/><circle cx="70.5" cy="-68.1" r="4.2"/><circle cx="116" cy="-67" r="4.2"/><circle cx="107.6" cy="-43.5" r="4.2"/><circle cx="95.1" cy="-23.7" r="4.2"/></g></g><path class="ln f0" pathLength="1" d="M-26 -78L0 -78A28.1 78 0 0 1 0 78L-26 78A28.1 78 0 0 1 -26 -78Z"/><ellipse class="ln f1" pathLength="1" cx="-26" cy="0" rx="28.1" ry="78"/><g transform="translate(-26 0) scale(0.36 1)"><circle class="lr" r="66"/><g class="h"><circle r="24"/><circle cx="0" cy="-40" r="6.5"/><circle cx="38" cy="-12.4" r="6.5"/><circle cx="23.5" cy="32.4" r="6.5"/><circle cx="-23.5" cy="32.4" r="6.5"/><circle cx="-38" cy="-12.4" r="6.5"/></g></g></g><g class="part" id="p-pad" style="--d:0.45s" transform="translate(-95 0)"><path class="ln f0" pathLength="1" d="M-33.4 -133.3 L-36.7 -128.9 L-37.5 -125.9 L-37.6 -123.9 L-33 -101.2 L-32 -98.9 L-19.3 -98.7 L-12.5 -106.5 L-8.4 -109.5 L-6 -110.7 L-3.6 -109.5 L0.5 -106.5 L7.3 -98.7 L19.3 -98.7 L20 -98.9 L20.6 -99.8 L25.4 -122 L25.6 -123.9 L25.2 -127.6 L23.8 -130.1 L18.8 -136.3 L13.6 -141 L11 -142.8 L8.2 -144.2 L2.7 -145.8 L-14.8 -145.8 L-20.3 -144.2 L-25.6 -141.1 L-28.3 -138.8Z"/><path class="ln f1" pathLength="1" d="M-36.7 -128.9 L-37.5 -125.9 L-37.4 -122 L-33 -101.2 L-32 -98.9 L-31.3 -98.7 L-30.6 -99.3 L-26.4 -104.6 L-20.4 -109.5 L-16.2 -111.4 L-12 -112 L-7.8 -111.4 L-3.6 -109.5 L2.4 -104.6 L7.3 -98.7 L8 -98.9 L8.6 -99.8 L13.4 -122 L13.6 -123.9 L13.2 -127.6 L11.8 -130.1 L6.8 -136.3 L1.6 -141 L-1 -142.8 L-3.8 -144.2 L-9.3 -145.8 L-14.7 -145.8 L-20.2 -144.2 L-23 -142.8 L-28.3 -138.8 L-33.3 -133.4Z"/><path class="ln lr2" pathLength="1" d="M-29.9 -130.9 L-30.5 -129.3 L-30.5 -127 L-28.3 -112.1 L-27.3 -110.3 L-23.3 -113.8 L-20.1 -115.8 L-15.3 -117.6 L-12 -118 L-8.7 -117.6 L-5.5 -116.6 L-0.7 -113.8 L2.9 -110.5 L3.7 -110.5 L4.3 -112.1 L6.5 -127 L6.5 -129.3 L6.2 -130.3 L5.1 -131.7 L-0.5 -136.3 L-4.3 -138.4 L-8.1 -139.6 L-12 -140 L-15.8 -139.6 L-19.7 -138.4 L-23.5 -136.3Z"/></g><g class="part" id="p-tips" style="--d:0.05s" transform="translate(200 0)"><path class="ln f0" pathLength="1" d="M-14 -20L22 -20A7.2 20 0 0 1 22 20L-14 20A7.2 20 0 0 1 -14 -20Z"/><ellipse class="ln f1" pathLength="1" cx="-14" cy="0" rx="7.2" ry="20"/><path class="ln f0" pathLength="1" d="M-38 -44.6L-26 -44.6A1.7 4.6 0 0 1 -26 -35.4L-38 -35.4A1.7 4.6 0 0 1 -38 -44.6Z"/><ellipse class="ln f1" pathLength="1" cx="-38" cy="-40" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-24.3 -17L-12.3 -17A1.7 4.6 0 0 1 -12.3 -7.8L-24.3 -7.8A1.7 4.6 0 0 1 -24.3 -17Z"/><ellipse class="ln f1" pathLength="1" cx="-24.3" cy="-12.4" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-29.5 27.8L-17.5 27.8A1.7 4.6 0 0 1 -17.5 37L-29.5 37A1.7 4.6 0 0 1 -29.5 27.8Z"/><ellipse class="ln f1" pathLength="1" cx="-29.5" cy="32.4" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-46.5 27.8L-34.5 27.8A1.7 4.6 0 0 1 -34.5 37L-46.5 37A1.7 4.6 0 0 1 -46.5 27.8Z"/><ellipse class="ln f1" pathLength="1" cx="-46.5" cy="32.4" rx="1.7" ry="4.6"/><path class="ln f0" pathLength="1" d="M-51.7 -17L-39.7 -17A1.7 4.6 0 0 1 -39.7 -7.8L-51.7 -7.8A1.7 4.6 0 0 1 -51.7 -17Z"/><ellipse class="ln f1" pathLength="1" cx="-51.7" cy="-12.4" rx="1.7" ry="4.6"/></g><g class="part" id="p-cal" style="--d:0.6s" transform="translate(-190 0)"><path class="ln fr0" pathLength="1" d="M-46.3 -82.8 L-44.2 -80.9 L64.2 -80.9 L66.3 -82.8 L68.1 -86.7 L76.8 -113.6 L78.2 -120.1 L78.4 -127.5 L77.6 -134.7 L75.8 -140.2 L70.2 -150.2 L66.1 -155.9 L62 -160.8 L57.7 -164.8 L53.7 -167.7 L49.3 -170 L44.8 -171.5 L40.2 -172 L-20.2 -172 L-24.8 -171.5 L-29.3 -170 L-33.7 -167.7 L-38.1 -164.4 L-42 -160.8 L-46.1 -155.9 L-50.6 -149.5 L-54.5 -142.9 L-55.8 -140.2 L-57.6 -134.7 L-58.4 -127.5 L-58.2 -120.1 L-56.8 -113.6 L-48.1 -86.7Z"/><path class="ln fr" pathLength="1" d="M-55.8 -140.2 L-57.6 -134.7 L-58.4 -127.5 L-58.2 -120.1 L-56.8 -113.6 L-48.1 -86.7 L-46.3 -82.8 L-44.2 -80.9 L-42 -81.1 L-39.9 -83.4 L-35.2 -90.6 L-30.5 -95.6 L-25.4 -98.9 L-22.8 -99.7 L-20.1 -100 L-17.5 -99.7 L-14.9 -99 L-12.3 -97.7 L-9.5 -95.6 L-4.8 -90.6 L-0.1 -83.4 L2 -81.1 L4.2 -80.9 L6.3 -82.8 L8.1 -86.7 L16.8 -113.6 L18.2 -120.1 L18.4 -127.5 L17.6 -134.7 L15.8 -140.2 L14.1 -143.6 L10.2 -150.2 L6.1 -155.9 L2 -160.8 L-1.9 -164.4 L-6.7 -168 L-11.2 -170.2 L-15.2 -171.5 L-19.8 -172 L-24.3 -171.6 L-29.3 -170 L-33.7 -167.7 L-37.7 -164.8 L-42.4 -160.3 L-46.1 -155.9 L-50.2 -150.2Z"/><path class="ln ce" pathLength="1" d="M-46.4 -142.1 L-47.8 -139 L-48.6 -134.6 L-48.7 -129.7 L-48.1 -125 L-43.5 -104.6 L-42.5 -101.4 L-41 -99.4 L-39.4 -99.1 L-37.9 -100.3 L-33.2 -105.8 L-28.9 -109.2 L-24.6 -111.3 L-20.1 -112 L-15.6 -111.3 L-11.1 -109.2 L-6.8 -105.8 L-2.1 -100.3 L-0.6 -99.1 L1 -99.4 L2.5 -101.4 L3.5 -104.6 L8.1 -125 L8.7 -129.7 L8.6 -134.6 L7.8 -139 L6.4 -142.1 L2.1 -147.8 L-1.2 -151.2 L-7.1 -155.9 L-13.5 -159 L-16.9 -159.8 L-23.3 -159.7 L-29.5 -157.8 L-35.8 -153.9 L-41.8 -148Z"/><path class="cs" d="M-30.9 -150 L-7.2 -150 L-7.8 -143.5 L-31.5 -143.5Z"/><path class="cs" d="M-25.9 -140.5 L-7.2 -140.5 L-7.8 -134 L-26.5 -134Z"/><path class="cs" d="M-19.8 -131 L-7.2 -131 L-7.8 -124.5 L-20.4 -124.5Z"/><path class="cs" d="M-14 -121.5 L-7.2 -121.5 L-7.8 -115 L-14.6 -115Z"/></g><g class="part" id="p-bolts" style="--d:0.75s" transform="translate(-300 0)"><g class="shank"><path class="ln f0" pathLength="1" d="M-52 -125.6L2 -125.6A2 5.6 0 0 1 2 -114.4L-52 -114.4A2 5.6 0 0 1 -52 -125.6Z"/><ellipse class="ln f1" pathLength="1" cx="-52" cy="-120" rx="2" ry="5.6"/></g><path class="ln f0" pathLength="1" d="M-62 -130.5L-50 -130.5A3.8 10.5 0 0 1 -50 -109.5L-62 -109.5A3.8 10.5 0 0 1 -62 -130.5Z"/><ellipse class="ln f1" pathLength="1" cx="-62" cy="-120" rx="3.8" ry="10.5"/><g class="shank"><path class="ln f0" pathLength="1" d="M-0 -125.6L54 -125.6A2 5.6 0 0 1 54 -114.4L-0 -114.4A2 5.6 0 0 1 -0 -125.6Z"/><ellipse class="ln f1" pathLength="1" cx="-0" cy="-120" rx="2" ry="5.6"/></g><path class="ln f0" pathLength="1" d="M-10 -130.5L2 -130.5A3.8 10.5 0 0 1 2 -109.5L-10 -109.5A3.8 10.5 0 0 1 -10 -130.5Z"/><ellipse class="ln f1" pathLength="1" cx="-10" cy="-120" rx="3.8" ry="10.5"/></g></g><g class="anno"><path class="ld" pathLength="1" d="M295.9 96.5L275.9 182.5h-56"/><circle class="ldo" cx="295.9" cy="96.5" r="2.6"/><text class="lt" x="213.9" y="186.5" text-anchor="end"><tspan class="lk">A</tspan> Moyeu</text><path class="ld" pathLength="1" d="M-18.3 142.5L-64.3 202.5h-56"/><circle class="ldo" cx="-18.3" cy="142.5" r="2.6"/><text class="lt" x="-126.3" y="206.5" text-anchor="end"><tspan class="lk">B</tspan> Disque ventilé</text><path class="ld" pathLength="1" d="M-63.4 -165.4L-17.4 -229.4h56"/><circle class="ldo" cx="-63.4" cy="-165.4" r="2.6"/><text class="lt" x="44.6" y="-225.4" text-anchor="start"><tspan class="lk">C</tspan> Plaquettes</text><path class="ld" pathLength="1" d="M187.9 -102.8L-17.4 -229.4"/><circle class="ldo" cx="187.9" cy="-102.8" r="2.6"/><path class="ld" pathLength="1" d="M-187.7 -211.2L-221.7 -261.2h-56"/><circle class="ldo" cx="-187.7" cy="-211.2" r="2.6"/><text class="lt" x="-283.7" y="-257.2" text-anchor="end"><tspan class="lk">D</tspan> Étrier</text><path class="ld" pathLength="1" d="M-324.7 -193.8L-304.7 -65.8h56"/><circle class="ldo" cx="-324.7" cy="-193.8" r="2.6"/><text class="lt" x="-242.7" y="-61.8" text-anchor="start"><tspan class="lk">E</tspan> Vis de fixation</text><text class="lt cote" x="113" y="9.6">Ø B</text></g>
+						</svg>
+						<div class="hero__meta">
+							<button class="hero__play" type="button" aria-pressed="false" hidden>
+								<span class="sr-only" data-label>Mettre en pause l’animation du frein</span>
+								<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+									<path class="i-pause" d="M9 6v12M15 6v12" /><path class="i-play" d="M8 5.5v13l11-6.5z" />
+								</svg>
+							</button>
+							<div class="hero__cartouche tl" aria-hidden="true">
+								<span>Ensemble frein</span><span>Vue éclatée</span>
 							</div>
 						</div>
-					</div>
+					</figure>
 				</div>
 			</section>
 
-			<section id="services" class="px-4 py-20 sm:px-6 lg:px-8">
-				<div class="mx-auto max-w-7xl">
-					<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none max-w-3xl">
-						<h2 class="text-3xl font-black sm:text-5xl">Services</h2>
-						<p class="mt-4 text-zinc-300">Des services clairs pour entretenir, diagnostiquer et fiabiliser votre véhicule.</p>
-					</div>
-					<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:car-wrench" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Entretien courant</h3>
+			<!-- ============================== 02 SERVICES ============================== -->
+			<section id="services" class="sec" aria-labelledby="services-title">
+				<div class="wrap">
+					<header class="sec-head sec-head--split">
+						<h2 id="services-title" class="display sec-title">Services</h2>
+						<p class="sec-lead">Des services clairs pour entretenir, diagnostiquer et fiabiliser votre véhicule.</p>
+					</header>
+
+					<div class="bento">
+						<article class="tile t--xl">
+							<div class="tile__in">
+								<span class="tile__plan"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M7 26h20l6 6v8a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/><path pathLength="1" d="M12 26v-5h9v5M10.5 21h12"/><path pathLength="1" d="M33 32l8-9"/><path pathLength="1" d="M41 28.5s-2.6 3.1-2.6 4.8a2.6 2.6 0 0 0 5.2 0c0-1.7-2.6-4.8-2.6-4.8z"/><path pathLength="1" d="M12 34h11"/></svg></span>
+								<h3 class="tile__title">Entretien courant</h3>
+								<p class="tile__text">Révision et suivi périodique réalisés avec rigueur pour préserver la fiabilité de votre véhicule.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Révision et suivi périodique réalisés avec rigueur pour préserver la fiabilité de votre véhicule.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:engine" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Réparation mécanique</h3>
+						<article class="tile t--w2">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect pathLength="1" x="13" y="5" width="22" height="15" rx="2"/><path pathLength="1" d="M13 9.5h22M13 13h22"/><circle pathLength="1" cx="24" cy="16.6" r="1.8"/><path pathLength="1" d="M21.6 20l-2.4 13.6M26.4 20l2.4 13.6"/><circle pathLength="1" cx="24" cy="38" r="6"/><circle pathLength="1" cx="24" cy="38" r="2.2"/></svg>
+								<h3 class="tile__title">Réparation mécanique</h3>
+								<p class="tile__text">Réparations mécaniques réalisées avec soin, après un contrôle précis de votre véhicule.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Réparations mécaniques réalisées avec soin, après un contrôle précis de votre véhicule.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:flash" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Diagnostic électronique</h3>
+						<article class="tile">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect pathLength="1" x="5" y="8" width="38" height="25" rx="3"/><path pathLength="1" d="M10 23h6l3-8 4 13 3-9 2 4h10"/><path pathLength="1" d="M19 33l-2 7M29 33l2 7M13 40h22"/></svg>
+								<h3 class="tile__title">Diagnostic électronique</h3>
+								<p class="tile__text">Analyse des défauts électroniques et recherche précise de l’origine du dysfonctionnement.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Analyse des défauts électroniques et recherche précise de l’origine du dysfonctionnement.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:car-key" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Achat et vente de véhicules</h3>
+						<article class="tile">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect pathLength="1" x="7" y="5" width="15" height="21" rx="5"/><circle pathLength="1" cx="14.5" cy="12.5" r="2.5"/><path pathLength="1" d="M14.5 26v16M14.5 33h4M14.5 37.5h3"/><path pathLength="1" d="M28 24l10-10h6v6L34 30a1.4 1.4 0 0 1-2 0l-4-4a1.4 1.4 0 0 1 0-2z"/><circle pathLength="1" cx="40.6" cy="17.4" r="1.3"/></svg>
+								<h3 class="tile__title">Achat et vente de véhicules</h3>
+								<p class="tile__text">Achat et vente de véhicules d’occasion, de l’épave au véhicule récent.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">Achat et vente de véhicules d’occasion, de l’épave au véhicule récent.</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:tire" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Pneumatiques</h3>
+						<article class="tile">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle pathLength="1" cx="24" cy="24" r="18"/><circle pathLength="1" cx="24" cy="24" r="10"/><circle pathLength="1" cx="24" cy="24" r="3"/><path pathLength="1" d="M42.0 24.0L38.5 24.0M39.6 33.0L36.6 31.2M33.0 39.6L31.2 36.6M24.0 42.0L24.0 38.5M15.0 39.6L16.8 36.6M8.4 33.0L11.4 31.2M6.0 24.0L9.5 24.0M8.4 15.0L11.4 16.8M15.0 8.4L16.7 11.4M24.0 6.0L24.0 9.5M33.0 8.4L31.2 11.4M39.6 15.0L36.6 16.7"/></svg>
+								<h3 class="tile__title">Pneumatiques</h3>
+								<p class="tile__text">Montage, remplacement et contrôle des pneumatiques selon votre véhicule et votre utilisation.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Montage, remplacement et contrôle des pneumatiques selon votre véhicule et votre utilisation.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:magnify-scan" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Recherche de panne</h3>
+						<article class="tile">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle pathLength="1" cx="20" cy="20" r="13"/><path pathLength="1" d="M29.5 29.5L42 42"/><path pathLength="1" d="M12 21h4l2-5 3 9 2-4h5"/></svg>
+								<h3 class="tile__title">Recherche de panne</h3>
+								<p class="tile__text">Investigation méthodique pour identifier la cause d’une panne avant toute intervention.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Investigation méthodique pour identifier la cause d’une panne avant toute intervention.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:clipboard-search" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Contrôle avant achat</h3>
+						<article class="tile t--w2">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect pathLength="1" x="10" y="8" width="28" height="35" rx="3"/><path pathLength="1" d="M18 8V4.5h12V8"/><path pathLength="1" d="M16 20l2.5 2.5L23 18M27 20.5h6M16 31l2.5 2.5L23 29M27 31.5h6"/></svg>
+								<h3 class="tile__title">Contrôle avant achat</h3>
+								<p class="tile__text">Inspection du véhicule afin de repérer les points sensibles avant une acquisition.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Inspection du véhicule afin de repérer les points sensibles avant une acquisition.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:speedometer" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Optimisation légère</h3>
+						<article class="tile t--w2">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M22 12h20v8h-7.3A14 14 0 1 1 22 12z"/><circle pathLength="1" cx="22" cy="26" r="6.5"/><path pathLength="1" d="M22 19.5v4M28.5 26h-4M22 32.5v-4M15.5 26h4"/></svg>
+								<h3 class="tile__title">Optimisation légère</h3>
+								<p class="tile__text">Améliorations mesurées pour renforcer les performances du véhicule.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Améliorations mesurées pour renforcer les performances du véhicule.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:tow-truck" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Dépannage</h3>
+						<article class="tile">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M4 35h4M16 35h12M36 35h8"/><path pathLength="1" d="M6 35V24l4-6h9v17"/><path pathLength="1" d="M10.5 24l2.5-3.5h3.5V24z"/><path pathLength="1" d="M19 30h17v5M27 30l13-16"/><path pathLength="1" d="M40 14v9a2.5 2.5 0 1 1-2.5 2.5"/><circle pathLength="1" cx="12" cy="36" r="4"/><circle pathLength="1" cx="32" cy="36" r="4"/></svg>
+								<h3 class="tile__title">Dépannage</h3>
+								<p class="tile__text">Remorquage de véhicule en cas de panne ou d’immobilisation.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Remorquage de véhicule en cas de panne ou d’immobilisation.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:car-sports" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Tuning</h3>
+						<article class="tile">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M5 16c12-5 26-5 38 0l-1.6 4c-11-3.6-23.8-3.6-34.8 0z"/><path pathLength="1" d="M5 12.5v9M43 12.5v9"/><path pathLength="1" d="M17 19.5l-1.5 11.5M31 19.5l1.5 11.5"/><path pathLength="1" d="M7 31h34v4a5 5 0 0 1-5 5H12a5 5 0 0 1-5-5z"/></svg>
+								<h3 class="tile__title">Tuning</h3>
+								<p class="tile__text">Personnalisation esthétique et ajustements légers selon votre projet.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Personnalisation esthétique et ajustements légers selon votre projet.
-							</p>
 						</article>
-						<article
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-racing/60"
-						>
-							<div class="flex items-center gap-3">
-								<iconify-icon class="text-2xl text-racing" icon="mdi:truck" aria-hidden="true"></iconify-icon>
-								<h3 class="font-bold">Mécanique poids lourd</h3>
+						<article class="tile t--w4">
+							<div class="tile__in">
+								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 33V11h26v22"/><path pathLength="1" d="M29 33V17h9l6 7v9"/><path pathLength="1" d="M33 17v7h10"/><path pathLength="1" d="M3 33h3M14 33h18M40 33h4"/><circle pathLength="1" cx="10" cy="35" r="4"/><circle pathLength="1" cx="36" cy="35" r="4"/></svg>
+								<h3 class="tile__title">Mécanique poids lourd</h3>
+								<p class="tile__text">Entretien et interventions mécaniques sur véhicules poids lourds.</p>
 							</div>
-							<p class="mt-3 text-sm leading-6 text-zinc-400">
-								Entretien et interventions mécaniques sur véhicules poids lourds.
-							</p>
 						</article>
 					</div>
 				</div>
 			</section>
 
-			<section id="apropos" class="px-4 py-20 sm:px-6 lg:px-8">
-				<div class="mx-auto max-w-7xl overflow-hidden rounded-lg border border-line bg-white/[.04] shadow-soft">
-					<div class="grid lg:grid-cols-[1fr_1.15fr]">
-						<div
-							class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none border-b border-line bg-gradient-to-br from-white/[.08] to-transparent p-8 sm:p-10 lg:border-b-0 lg:border-r"
-						>
-							<h2 class="text-3xl font-black sm:text-5xl">Pourquoi choisir Mav<span class="text-racing">.</span> RS Auto ?</h2>
-							<p class="mt-4 text-sm font-bold uppercase tracking-[0.22em] text-racing">Garage indépendant</p>
-							<p class="mt-6 text-lg leading-8 text-zinc-300">
-								À Maubourguet, Mav<span class="text-racing">.</span> RS Auto accompagne les conducteurs avec une approche directe, précise
-								et adaptée à chaque véhicule.
-							</p>
-							<p class="mt-4 leading-8 text-zinc-400">
-								Du véhicule du quotidien au modèle sportif ou passion, l’objectif reste le même : un suivi sérieux, des conseils clairs
-								et un travail soigné.
-							</p>
+			<!-- ============================== 03 À PROPOS ============================== -->
+			<section id="apropos" class="sec" aria-labelledby="apropos-title">
+				<div class="wrap about">
+					<div class="about__copy">
+						<header class="sec-head">
+							<h2 id="apropos-title" class="display sec-title">Pourquoi choisir Mav<span class="dot">.</span> RS Auto ?</h2>
+						</header>
+						<p class="tl tl--mark">Garage indépendant</p>
+						<p class="about__lead">
+							À Maubourguet, Mav<span class="dot">.</span> RS Auto accompagne les conducteurs avec une approche directe, précise et
+							adaptée à chaque véhicule.
+						</p>
+						<p class="about__text">
+							Du véhicule du quotidien au modèle sportif ou passion, l’objectif reste le même : un suivi sérieux, des conseils clairs et
+							un travail soigné.
+						</p>
+					</div>
+
+					<div class="cluster">
+						<div class="cluster__gauge">
+							<svg class="gauge" viewBox="0 0 400 344" aria-hidden="true" focusable="false"><path class="g-ring" d="M68.5 331.5A186 186 0 1 1 331.5 331.5"/><path class="g-zone" d="M367.1 244.8A173 173 0 0 1 322.3 322.3"/><path class="g-minor" d="M55.4 283.5L45.8 289M33 200L22 200M55.4 116.5L45.8 111M116.5 55.4L111 45.8M200 33L200 22M283.5 55.4L289 45.8M344.6 116.5L354.2 111M367 200L378 200M344.6 283.5L354.2 289"/><path class="g-major" d="M88.3 311.7L74.1 325.9M47.4 240.9L28.1 246.1M47.4 159.1L28.1 153.9M88.3 88.3L74.1 74.1M159.1 47.4L153.9 28.1M240.9 47.4L246.1 28.1M311.7 88.3L325.9 74.1M352.6 159.1L371.9 153.9M352.6 240.9L371.9 246.1M311.7 311.7L325.9 325.9"/><g class="g-num"><text x="68.6" y="241.2">20</text><text x="68.6" y="170.8">40</text><text x="103.8" y="109.8">60</text><text x="164.8" y="74.6">80</text><text x="235.2" y="74.6">100</text><text x="296.2" y="109.8">120</text><text x="331.4" y="170.8">140</text><text x="331.4" y="241.2">160</text><text x="296.2" y="302.2">180</text></g><path class="g-val-glow" pathLength="1" d="M62.8 337.2A194 194 0 1 1 337.2 337.2"/><path class="g-val" pathLength="1" d="M62.8 337.2A194 194 0 1 1 337.2 337.2"/><g class="g-needle" transform="rotate(285 200 200)"><path d="M174 197L350 199L350 201L174 203Z"/></g><circle class="g-hub" cx="200" cy="200" r="17"/><circle class="g-pin" cx="200" cy="200" r="5"/><text class="g-read" x="200" y="292">100</text><text class="g-unit" x="200" y="318">km/h</text></svg>
 						</div>
-						<div class="grid gap-px bg-line sm:grid-cols-2">
-							<article
-								class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none bg-ink/95 p-7 sm:p-8"
-							>
-								<iconify-icon class="text-3xl text-racing" icon="mdi:account-wrench" aria-hidden="true"></iconify-icon>
-								<h3 class="mt-5 font-bold">Relation directe</h3>
-								<p class="mt-3 text-sm leading-6 text-zinc-400">Un échange simple avec le garagiste, sans intermédiaire inutile.</p>
+						<div class="lamps">
+							<article class="lamp">
+								<span class="lamp__ico" aria-hidden="true"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M6 9h20v13H15l-5 4.5V22H6z"/><path pathLength="1" d="M22 26h20v13h-4v4.5L33 39H22z"/></svg></span>
+								<h3>Relation directe</h3>
+								<p>Un échange simple avec le garagiste, sans intermédiaire inutile.</p>
 							</article>
-							<article
-								class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none bg-ink/95 p-7 sm:p-8"
-							>
-								<iconify-icon class="text-3xl text-racing" icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
-								<h3 class="mt-5 font-bold">Conseils adaptés</h3>
-								<p class="mt-3 text-sm leading-6 text-zinc-400">Des recommandations cohérentes avec le véhicule, son usage et vos objectifs.</p>
+							<article class="lamp">
+								<span class="lamp__ico" aria-hidden="true"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M24 6a11 11 0 0 0-6.5 19.9V31h13v-5.1A11 11 0 0 0 24 6z"/><path pathLength="1" d="M19 35.5h10M20.5 40h7"/><path pathLength="1" d="M24 31v-7l-3-3M24 24l3-3"/></svg></span>
+								<h3>Conseils adaptés</h3>
+								<p>Des recommandations cohérentes avec le véhicule, son usage et vos objectifs.</p>
 							</article>
-							<article
-								class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none bg-ink/95 p-7 sm:p-8"
-							>
-								<iconify-icon class="text-3xl text-racing" icon="mdi:clipboard-check-outline" aria-hidden="true"></iconify-icon>
-								<h3 class="mt-5 font-bold">Diplômé en mécanique</h3>
-								<p class="mt-3 text-sm leading-6 text-zinc-400">
-									Une expertise mécanique solide, couplée à plusieurs années d’expérience.
-								</p>
+							<article class="lamp">
+								<span class="lamp__ico" aria-hidden="true"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M4 18l20-9 20 9-20 9z"/><path pathLength="1" d="M12 21.6V31c3.3 2.7 7.3 4 12 4s8.7-1.3 12-4v-9.4"/><path pathLength="1" d="M44 18v11"/></svg></span>
+								<h3>Diplômé en mécanique</h3>
+								<p>Une expertise mécanique solide, couplée à plusieurs années d’expérience.</p>
 							</article>
-							<article
-								class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none bg-ink/95 p-7 sm:p-8"
-							>
-								<iconify-icon class="text-3xl text-racing" icon="mdi:gauge" aria-hidden="true"></iconify-icon>
-								<h3 class="mt-5 font-bold">Culture automobile</h3>
-								<p class="mt-3 text-sm leading-6 text-zinc-400">Un vrai passionné automobile à votre service, à votre écoute.</p>
+							<article class="lamp">
+								<span class="lamp__ico" aria-hidden="true"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle pathLength="1" cx="24" cy="24" r="17"/><circle pathLength="1" cx="24" cy="24" r="4.5"/><path pathLength="1" d="M7.5 21.5l12 1.5M28.5 23l12-1.5M24 28.5V41"/></svg></span>
+								<h3>Culture automobile</h3>
+								<p>Un vrai passionné automobile à votre service, à votre écoute.</p>
 							</article>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="localisation" class="border-y border-line bg-white/[.03] px-4 py-20 sm:px-6 lg:px-8">
-				<span id="contact" class="block scroll-mt-28"></span>
-				<div class="mx-auto max-w-7xl">
-					<div class="grid gap-8 lg:grid-cols-2">
-						<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none flex h-full flex-col justify-center">
-							<h2 class="text-3xl font-black sm:text-5xl">Localisation et contact</h2>
-							<div class="mt-8 grid gap-4 text-zinc-300">
-								<p>
-									<strong class="text-white">Adresse :</strong>
-									Maubourguet
-								</p>
-								<p>
-									<strong class="text-white">Téléphone :</strong>
-									<a class="text-white hover:text-racing" href="tel:+33682141054">06 82 14 10 54</a>
-								</p>
-								<p>
-									<strong class="text-white">Email :</strong>
-									<a class="text-white hover:text-racing" href="mailto:[Email à renseigner]">[Email à renseigner]</a>
-								</p>
-								<p>
-									<strong class="text-white">Horaires :</strong>
-									[Horaires à renseigner]
-								</p>
-								<p>
-									<strong class="text-white">Zone d’intervention :</strong>
-									Maubourguet et alentours.
-								</p>
+			<!-- ============================== 04 LOCALISATION ============================== -->
+			<section id="localisation" class="sec sec--loc" aria-labelledby="loc-title">
+				<span id="contact" class="anchor"></span>
+				<div class="wrap loc">
+					<div class="loc__info">
+						<header class="sec-head">
+							<h2 id="loc-title" class="display sec-title">Localisation et contact</h2>
+						</header>
+						<dl class="fiche">
+							<div class="fiche__row">
+								<dt>Adresse :</dt>
+								<dd>Maubourguet</dd>
 							</div>
-							<a
-								href="https://www.google.com/maps/place/65700+Maubourguet/@43.4461899,0.0017105,11.75z/data=!4m6!3m5!1s0x12a9de336051b9d9:0x406f69c2f3d7b10!8m2!3d43.4681065!4d0.0302371!16s%2Fm%2F03nv63w?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D"
-								class="mt-8 inline-flex w-fit rounded-full bg-racing px-6 py-3 font-bold text-white"
-							>
-								Voir l’itinéraire
-							</a>
-						</div>
-						<div class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none overflow-hidden rounded-lg border border-line bg-panel">
+							<div class="fiche__row">
+								<dt>Téléphone :</dt>
+								<dd><a href="tel:+33682141054">06 82 14 10 54</a></dd>
+							</div>
+							<div class="fiche__row">
+								<dt>Email :</dt>
+								<dd><a href="mailto:[Email à renseigner]">[Email à renseigner]</a></dd>
+							</div>
+							<div class="fiche__row">
+								<dt>Horaires :</dt>
+								<dd>[Horaires à renseigner]</dd>
+							</div>
+							<div class="fiche__row">
+								<dt>Zone d’intervention :</dt>
+								<dd>Maubourguet et alentours.</dd>
+							</div>
+						</dl>
+						<a
+							class="btn btn--red loc__cta"
+							href="https://www.google.com/maps/place/65700+Maubourguet/@43.4461899,0.0017105,11.75z/data=!4m6!3m5!1s0x12a9de336051b9d9:0x406f69c2f3d7b10!8m2!3d43.4681065!4d0.0302371!16s%2Fm%2F03nv63w?entry=ttu&amp;g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D"
+						>
+							<svg class="ico-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+								<path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0 1 13 0c0 4.9-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.3" />
+							</svg>
+							<span>Voir l’itinéraire</span>
+						</a>
+					</div>
+
+					<figure class="map">
+						<div class="map__frame">
 							<iframe
 								title="Carte Google Maps de Maubourguet"
-								src="https://www.google.com/maps?q=65700%20Maubourguet&output=embed"
-								class="h-96 w-full"
+								src="https://www.google.com/maps?q=65700%20Maubourguet&amp;output=embed"
 								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
 							></iframe>
-							<p class="p-4 text-sm text-zinc-400">Carte Google Maps de Maubourguet.</p>
+							<span class="map__corner" aria-hidden="true"></span><span class="map__corner" aria-hidden="true"></span
+							><span class="map__corner" aria-hidden="true"></span><span class="map__corner" aria-hidden="true"></span>
+							<span class="map__coords tl" aria-hidden="true">43.4681 N<br />0.0302 E</span>
 						</div>
-					</div>
+						<figcaption class="map__caption">Carte Google Maps de Maubourguet.</figcaption>
+					</figure>
 				</div>
 			</section>
 
-			<section class="px-4 py-20 sm:px-6 lg:px-8">
-				<div class="mx-auto max-w-7xl">
-					<h2 class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none text-3xl font-black sm:text-5xl">Avis clients</h2>
-					<div class="mt-10 grid gap-5 md:grid-cols-3">
-						<figure class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6">
-							<blockquote class="text-zinc-300">
-								Diagnostic clair et explications simples. On sent le sérieux et la passion auto, sans discours commercial inutile.
-							</blockquote>
-							<figcaption class="mt-5 font-bold">Client Mav<span class="text-racing">.</span> RS Auto</figcaption>
-						</figure>
-						<figure class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6">
-							<blockquote class="text-zinc-300">
-								Travail propre sur mon véhicule, avec transparence sur ce qui était nécessaire et ce qui pouvait attendre.
-							</blockquote>
-							<figcaption class="mt-5 font-bold">Client Mav<span class="text-racing">.</span> RS Auto</figcaption>
-						</figure>
-						<figure class="reveal opacity-0 translate-y-[22px] transition duration-700 ease-out motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transition-none rounded-lg border border-line bg-white/[.04] p-6">
-							<blockquote class="text-zinc-300">
-								Très bon contact, conseils adaptés et soin visible apporté à la voiture. Une vraie approche de passionné.
-							</blockquote>
-							<figcaption class="mt-5 font-bold">Client Mav<span class="text-racing">.</span> RS Auto</figcaption>
-						</figure>
+			<!-- ============================== 05 AVIS ============================== -->
+			<section id="avis" class="sec" aria-labelledby="avis-title">
+				<div class="wrap">
+					<header class="sec-head">
+						<h2 id="avis-title" class="display sec-title">Avis clients</h2>
+					</header>
+
+					<div class="deck" role="region" aria-roledescription="carrousel" aria-labelledby="avis-title">
+						<div class="deck__stage" aria-live="polite">
+							<div class="deck__card" role="group" aria-roledescription="avis" aria-label="1 sur 3" data-pos="0">
+								<figure>
+									<svg class="deck__streaks" aria-hidden="true" focusable="false"><use href="#streaks" /></svg>
+									<blockquote>
+										Diagnostic clair et explications simples. On sent le sérieux et la passion auto, sans discours commercial inutile.
+									</blockquote>
+									<figcaption>Client Mav<span class="dot">.</span> RS Auto</figcaption>
+								</figure>
+							</div>
+							<div class="deck__card" role="group" aria-roledescription="avis" aria-label="2 sur 3" data-pos="1">
+								<figure>
+									<svg class="deck__streaks" aria-hidden="true" focusable="false"><use href="#streaks" /></svg>
+									<blockquote>
+										Travail propre sur mon véhicule, avec transparence sur ce qui était nécessaire et ce qui pouvait attendre.
+									</blockquote>
+									<figcaption>Client Mav<span class="dot">.</span> RS Auto</figcaption>
+								</figure>
+							</div>
+							<div class="deck__card" role="group" aria-roledescription="avis" aria-label="3 sur 3" data-pos="2">
+								<figure>
+									<svg class="deck__streaks" aria-hidden="true" focusable="false"><use href="#streaks" /></svg>
+									<blockquote>
+										Très bon contact, conseils adaptés et soin visible apporté à la voiture. Une vraie approche de passionné.
+									</blockquote>
+									<figcaption>Client Mav<span class="dot">.</span> RS Auto</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="deck__ctrl">
+							<button class="deck__btn" type="button" data-dir="-1" aria-label="Avis précédent">
+								<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" /></svg>
+							</button>
+							<span class="tl deck__count" aria-hidden="true">1 / 3</span>
+							<button class="deck__btn" type="button" data-dir="1" aria-label="Avis suivant">
+								<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" /></svg>
+							</button>
+						</div>
 					</div>
 				</div>
 			</section>
 		</main>
 
-		<footer class="relative z-10 border-t border-line px-4 py-10 sm:px-6 lg:px-8">
-			<div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-4">
+		<footer class="ftr">
+			<div class="wrap grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
 				<div>
-					<p class="text-xl font-black">Mav<span class="text-racing">.</span> RS Auto</p>
-					<p class="mt-2 text-sm text-zinc-400">Garage indépendant automobile à Maubourguet</p>
+					<img class="ftr__logo" src="assets/mav-logo.svg" alt="Mav. RS Auto" width="220" height="61" loading="lazy" decoding="async" />
+					<p class="mt-4 text-sm text-zinc-400">Garage indépendant automobile à Maubourguet</p>
 				</div>
-				<div>
-					<h2 class="font-bold">Liens rapides</h2>
-					<div class="mt-3 grid gap-2 text-sm text-zinc-400">
+				<nav aria-labelledby="ftr-links">
+					<h2 id="ftr-links" class="ftr__title">Liens rapides</h2>
+					<div class="ftr__list">
 						<a href="#services">Services</a>
 						<a href="#apropos">À propos</a>
 						<a href="#contact">Contact</a>
 					</div>
-				</div>
+				</nav>
 				<div>
-					<h2 class="font-bold">Informations</h2>
-					<div class="mt-3 grid gap-2 text-sm text-zinc-400">
+					<h2 class="ftr__title">Informations</h2>
+					<div class="ftr__list">
 						<a href="#">Mentions légales</a>
 						<span>[Réseau social à renseigner]</span>
 					</div>
 				</div>
 				<div>
-					<h2 class="font-bold">Contact</h2>
-					<p class="mt-3 text-sm text-zinc-400">
-						06 82 14 10 54
-						<br />
-						[Email à renseigner]
+					<h2 class="ftr__title">Contact</h2>
+					<p class="ftr__list">
+						<a href="tel:+33682141054">06 82 14 10 54</a>
+						<span>[Email à renseigner]</span>
 					</p>
 				</div>
 			</div>
-			<p class="mx-auto mt-8 max-w-7xl text-sm text-zinc-500">
-				© 2026 Mav<span class="text-racing">.</span> RS Auto. Tous droits réservés. Site par Hugo Eribon.
-			</p>
+			<p class="wrap ftr__legal">© 2026 Mav<span class="dot">.</span> RS Auto. Tous droits réservés. Site par Hugo Eribon.</p>
 		</footer>
 
 		<script>
-			const header = document.getElementById("site-header");
-			const menuButton = document.getElementById("menu-button");
-			const mobileMenu = document.getElementById("mobile-menu");
+			(() => {
+				const motionOK = () => window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
 
-			function updateHeader() {
-				const active = window.scrollY > 20;
-				header.classList.toggle("bg-ink/80", active);
-				header.classList.toggle("backdrop-blur-xl", active);
-				header.classList.toggle("border-line", active);
-			}
-
-			menuButton.addEventListener("click", () => {
-				const open = menuButton.getAttribute("aria-expanded") !== "true";
-				mobileMenu.classList.toggle("max-h-0", !open);
-				mobileMenu.classList.toggle("max-h-80", open);
-				mobileMenu.classList.toggle("opacity-0", !open);
-				mobileMenu.classList.toggle("opacity-100", open);
-				mobileMenu.classList.toggle("border-transparent", !open);
-				mobileMenu.classList.toggle("border-line", open);
-				mobileMenu.classList.toggle("pb-5", open);
-				mobileMenu.classList.toggle("pointer-events-none", !open);
-				menuButton.setAttribute("aria-expanded", String(open));
-			});
-
-			mobileMenu.querySelectorAll("a").forEach((link) => {
-				link.addEventListener("click", () => {
-					mobileMenu.classList.add("max-h-0", "opacity-0", "border-transparent", "pointer-events-none");
-					mobileMenu.classList.remove("max-h-80", "opacity-100", "border-line", "pb-5");
-					menuButton.setAttribute("aria-expanded", "false");
-				});
-			});
-
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) entry.target.classList.remove("opacity-0", "translate-y-[22px]");
-						if (entry.isIntersecting) entry.target.classList.add("opacity-100", "translate-y-0");
+				// ---------------------------------------------------------- header: compact state + scroll progress
+				const header = document.getElementById("site-header");
+				const progress = header.querySelector(".hdr__progress");
+				let ticking = false;
+				function onScroll() {
+					if (ticking) return;
+					ticking = true;
+					requestAnimationFrame(() => {
+						const y = window.scrollY;
+						const max = document.documentElement.scrollHeight - window.innerHeight;
+						header.classList.toggle("is-compact", y > 24);
+						progress.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+						ticking = false;
 					});
-				},
-				{ threshold: 0.12 },
-			);
+				}
+				window.addEventListener("scroll", onScroll, { passive: true });
+				window.addEventListener("resize", onScroll, { passive: true });
+				onScroll();
 
-			document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-			function calculateSpeed() {
-				const meterBar = document.getElementById("meter-bg-bar");
-				if (!meterBar) return 0;
-				const strokeDashoffset = parseFloat(window.getComputedStyle(meterBar).getPropertyValue("stroke-dashoffset"));
-				return Math.round(((615 - strokeDashoffset) / 615) * 180);
-			}
+				// ---------------------------------------------------------- active section in the desktop nav
+				const navLinks = [...document.querySelectorAll(".hdr__nav a")];
+				const spy = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (!entry.isIntersecting) return;
+							navLinks.forEach((link) => {
+								if (link.getAttribute("href") === `#${entry.target.id}`) link.setAttribute("aria-current", "true");
+								else link.removeAttribute("aria-current");
+							});
+						});
+					},
+					{ rootMargin: "-45% 0px -50% 0px" },
+				);
+				["accueil", "services", "apropos", "localisation"].forEach((id) => spy.observe(document.getElementById(id)));
 
-			let displayedSpeed = 100;
+				// ---------------------------------------------------------- mobile menu (focus trap, Escape, inert)
+				const menuButton = document.getElementById("menu-button");
+				const mobileMenu = document.getElementById("mobile-menu");
+				const menuLabel = menuButton.querySelector("[data-label]");
+				const menuLinks = [...mobileMenu.querySelectorAll("a")];
+				const outside = [document.querySelector(".skip"), document.getElementById("contenu"), document.querySelector(".ftr"), header.querySelector(".hdr__logo"), header.querySelector(".btn--call")];
 
-			function updateSpeedDisplay() {
-				const speedDisplay = document.getElementById("speed");
-				const targetSpeed = calculateSpeed();
-				displayedSpeed += (targetSpeed - displayedSpeed) * 0.12;
-				if (speedDisplay) speedDisplay.textContent = Math.round(displayedSpeed);
-				requestAnimationFrame(updateSpeedDisplay);
-			}
+				function setMenu(open, { restoreFocus = true } = {}) {
+					menuButton.setAttribute("aria-expanded", String(open));
+					menuLabel.textContent = open ? "Fermer le menu" : "Ouvrir le menu";
+					mobileMenu.classList.toggle("is-open", open);
+					header.classList.toggle("is-open", open);
+					document.body.style.overflow = open ? "hidden" : "";
+					outside.forEach((el) => el && (el.inert = open));
+					if (open) menuLinks[0].focus({ preventScroll: true });
+					else if (restoreFocus) menuButton.focus({ preventScroll: true });
+				}
+				menuButton.addEventListener("click", () => setMenu(menuButton.getAttribute("aria-expanded") !== "true"));
+				menuLinks.forEach((link) => link.addEventListener("click", () => setMenu(false, { restoreFocus: false })));
+				document.addEventListener("keydown", (event) => {
+					if (menuButton.getAttribute("aria-expanded") !== "true") return;
+					if (event.key === "Escape") {
+						event.preventDefault();
+						setMenu(false);
+						return;
+					}
+					if (event.key !== "Tab") return;
+					const focusables = [menuButton, ...menuLinks];
+					const index = focusables.indexOf(document.activeElement);
+					const next = event.shiftKey ? (index <= 0 ? focusables.length - 1 : index - 1) : (index + 1) % focusables.length;
+					event.preventDefault();
+					focusables[next].focus();
+				});
+				window.matchMedia("(min-width: 1024px)").addEventListener("change", (event) => {
+					if (event.matches && menuButton.getAttribute("aria-expanded") === "true") setMenu(false, { restoreFocus: false });
+				});
 
-			requestAnimationFrame(updateSpeedDisplay);
-			updateHeader();
-			window.addEventListener("scroll", updateHeader, { passive: true });
+				// ---------------------------------------------------------- services: icons drawn once on touch screens
+				if (window.matchMedia("(hover: none)").matches) {
+					const tileObserver = new IntersectionObserver(
+						(entries) => {
+							entries.forEach((entry) => {
+								if (!entry.isIntersecting) return;
+								entry.target.classList.add("is-drawn");
+								tileObserver.unobserve(entry.target);
+							});
+						},
+						{ rootMargin: "0px 0px -20% 0px" },
+					);
+					document.querySelectorAll(".tile").forEach((tile) => tileObserver.observe(tile));
+				}
+
+				// ---------------------------------------------------------- reviews deck
+				const deck = document.querySelector(".deck");
+				const cards = [...deck.querySelectorAll(".deck__card")];
+				const count = deck.querySelector(".deck__count");
+				let current = 0;
+				function renderDeck() {
+					cards.forEach((card, k) => {
+						const pos = (k - current + cards.length) % cards.length;
+						card.dataset.pos = String(pos);
+						card.inert = pos !== 0;
+						card.setAttribute("aria-hidden", String(pos !== 0));
+					});
+					count.textContent = `${current + 1} / ${cards.length}`;
+				}
+				function step(dir) {
+					const leaving = cards[current];
+					current = (current + dir + cards.length) % cards.length;
+					const entering = cards[current];
+					if (motionOK()) {
+						const target = dir > 0 ? leaving : entering;
+						const cls = dir > 0 ? "is-out" : "is-in";
+						target.classList.remove("is-out", "is-in");
+						void target.offsetWidth;
+						target.classList.add(cls);
+						target.addEventListener("animationend", () => target.classList.remove(cls), { once: true });
+					}
+					renderDeck();
+				}
+				deck.querySelectorAll(".deck__btn").forEach((btn) => btn.addEventListener("click", () => step(Number(btn.dataset.dir))));
+				deck.addEventListener("keydown", (event) => {
+					if (event.key === "ArrowRight") step(1);
+					if (event.key === "ArrowLeft") step(-1);
+				});
+				renderDeck();
+
+				// ---------------------------------------------------------- CDN libraries, loaded once the page is idle
+				const CDN = {
+					tailwind: ["https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js", "sha384-2ql948lIdLcGEE0/qxNiudyTjgauA3RDJERu5xW75kFCvSl5a9odyQYCb6tEjnmB"],
+					gsap: ["https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js", "sha384-XmJ9SoHtVOHoQUcKvFAzVXwdkKo1Ie3bhmSoIAkcdsHGaIrVJIkmozyq0FJeb/Ly"],
+					scrollTrigger: ["https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js", "sha384-wl5TeDVvOWt30Pbf8aSo2ZrzsOjddu3avOBvHe+p+OhJt9gP6w9YXmDkN5DK2/dF"],
+				};
+				const loadScript = ([src, integrity]) =>
+					new Promise((resolve, reject) => {
+						const script = document.createElement("script");
+						script.src = src;
+						script.integrity = integrity;
+						script.crossOrigin = "anonymous";
+						script.onload = resolve;
+						script.onerror = reject;
+						document.head.appendChild(script);
+					});
+				const whenIdle = (fn) => ("requestIdleCallback" in window ? requestIdleCallback(fn, { timeout: 1500 }) : setTimeout(fn, 200));
+				const afterLoad = (fn) => (document.readyState === "complete" ? whenIdle(fn) : window.addEventListener("load", () => whenIdle(fn), { once: true }));
+
+				afterLoad(() => {
+					loadScript(CDN.tailwind).catch(() => {});
+					if (!motionOK()) return;
+					loadScript(CDN.gsap)
+						.then(() => loadScript(CDN.scrollTrigger))
+						.then(initScenes)
+						.catch(() => {});
+				});
+
+				// ---------------------------------------------------------- animated scenes (GSAP)
+				function initScenes() {
+					gsap.registerPlugin(ScrollTrigger);
+					const mm = gsap.matchMedia();
+
+					mm.add({ motion: "(prefers-reduced-motion: no-preference)" }, (ctx) => {
+						if (!ctx.conditions.motion) return;
+
+						// Hero: looping exploded view <-> assembled brake, resting on the exploded view
+						const parts = gsap.utils.toArray(".hd .part");
+						const offsets = parts.map((part) => gsap.getProperty(part, "x"));
+						const playBtn = document.querySelector(".hero__play");
+						const playLabel = playBtn.querySelector("[data-label]");
+						let userPaused = false;
+						let inView = true;
+						const loop = gsap.timeline({ repeat: -1, defaults: { ease: "power3.inOut" } });
+						loop
+							.to({}, { duration: 2.8 })
+							.addLabel("assemble")
+							.to(".hd .anno, .hd .cote", { opacity: 0, duration: 0.35, ease: "power1.out" }, "assemble")
+							.to(parts, { x: 0, duration: 1.6, stagger: { each: 0.05, from: "end" } }, "assemble")
+							.to(".hd .spin", { rotation: 180, svgOrigin: "0 0", duration: 1.9, ease: "power2.inOut" }, "assemble")
+							.to(".hd .rig", { scale: 1.22, svgOrigin: "0 0", duration: 1.7 }, "assemble")
+							.to(".hd .shank", { opacity: 0, duration: 0.2 }, "assemble+=1.4")
+							.addLabel("explode", "+=1.2")
+							.to(".hd .shank", { opacity: 1, duration: 0.2 }, "explode")
+							.to(parts, { x: (i) => offsets[i], duration: 1.6, stagger: { each: 0.05 } }, "explode")
+							.to(".hd .spin", { rotation: 360, svgOrigin: "0 0", duration: 1.9, ease: "power2.inOut" }, "explode")
+							.to(".hd .rig", { scale: 1, svgOrigin: "0 0", duration: 1.7 }, "explode")
+							.to(".hd .anno, .hd .cote", { opacity: 1, duration: 0.5, ease: "power1.in" }, "explode+=1.3");
+
+						const sync = () => {
+							if (inView && !userPaused) loop.resume();
+							else loop.pause();
+							playBtn.setAttribute("aria-pressed", String(userPaused));
+							playLabel.textContent = userPaused ? "Relancer l’animation du frein" : "Mettre en pause l’animation du frein";
+						};
+						playBtn.hidden = false;
+						const onPlay = () => {
+							userPaused = !userPaused;
+							sync();
+						};
+						playBtn.addEventListener("click", onPlay);
+						const heroObserver = new IntersectionObserver(([entry]) => {
+							inView = entry.isIntersecting;
+							sync();
+						});
+						heroObserver.observe(document.querySelector(".hero__fig"));
+						sync();
+
+						// About: needle sweeps the scale, lights the four lamps, settles on 100
+						const cluster = document.querySelector(".cluster");
+						const needle = cluster.querySelector(".g-needle");
+						const arcs = cluster.querySelectorAll(".g-val, .g-val-glow");
+						const readout = cluster.querySelector(".g-read");
+						const lamps = [...cluster.querySelectorAll(".lamp")];
+						const thresholds = [40, 80, 120, 160];
+						const state = { v: 0 };
+						let settled = false;
+						const render = () => {
+							const v = state.v;
+							needle.setAttribute("transform", `rotate(${135 + v * 1.5} 200 200)`);
+							arcs.forEach((arc) => (arc.style.strokeDashoffset = String(1 - v / 180)));
+							readout.textContent = String(Math.round(v));
+							lamps.forEach((lamp, k) => lamp.classList.toggle("is-on", settled || v >= thresholds[k]));
+						};
+						cluster.classList.add("is-live");
+						render();
+						const sweep = gsap.timeline({
+							scrollTrigger: { trigger: cluster, start: "top 80%", end: "bottom 55%", scrub: 0.8 },
+							onUpdate: () => {
+								settled = sweep.progress() >= 0.7;
+								render();
+							},
+						});
+						sweep.to(state, { v: 180, duration: 0.7, ease: "power1.in" }).to(state, { v: 100, duration: 0.3, ease: "power2.out" });
+
+						return () => {
+							heroObserver.disconnect();
+							playBtn.removeEventListener("click", onPlay);
+							playBtn.hidden = true;
+							cluster.classList.remove("is-live");
+							lamps.forEach((lamp) => lamp.classList.remove("is-on"));
+							needle.setAttribute("transform", "rotate(285 200 200)");
+							arcs.forEach((arc) => (arc.style.strokeDashoffset = ""));
+							readout.textContent = "100";
+						};
+					});
+				}
+			})();
 		</script>
 	</body>
 </html>
