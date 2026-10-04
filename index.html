@@ -615,7 +615,7 @@
 					position: relative;
 					display: grid;
 					align-items: start;
-					padding: calc(var(--hdr) + clamp(24px, 5vh, 56px)) 0 clamp(40px, 6vw, 80px);
+					padding: calc(var(--hdr) + clamp(40px, 8vh, 96px)) 0 clamp(64px, 9vw, 128px);
 					overflow: clip;
 				}
 				.hero__inner {
@@ -774,21 +774,25 @@
 					.hero__fig {
 						margin-right: 0;
 					}
+					.hd {
+						width: 110%;
+						margin-inline: -5%;
+					}
 					.hero__meta {
 						right: var(--gut);
 					}
 				}
 				@media (max-width: 1023.98px) {
 					.hero__fig {
-						max-width: 640px;
+						max-width: 700px;
 						margin: 12px auto 0;
 						width: 100%;
 					}
 				}
 				@media (max-width: 640px) {
 					.hd {
-						width: 128%;
-						margin-left: -14%;
+						width: 136%;
+						margin-left: -18%;
 					}
 					.hd .anno,
 					.hd .cote,
@@ -1006,8 +1010,7 @@
 						grid-template-columns: repeat(2, minmax(0, 1fr));
 					}
 					.t--xl,
-					.t--w2,
-					.t--w4 {
+					.t--w2 {
 						grid-column: span 2;
 					}
 				}
@@ -1017,7 +1020,7 @@
 						grid-auto-rows: minmax(200px, auto);
 					}
 					.bento {
-						grid-template-rows: repeat(4, minmax(184px, auto)) auto;
+						grid-template-rows: repeat(4, minmax(184px, auto));
 					}
 					.t--xl {
 						grid-row: span 2;
@@ -1085,25 +1088,6 @@
 						grid-column: 1;
 						grid-row: 3;
 					}
-					.t--w4 {
-						grid-column: span 4;
-					}
-					.t--w4 .tile__in {
-						flex-direction: row;
-						align-items: center;
-						gap: 2rem;
-						padding-block: 26px;
-					}
-					.t--w4 .ico {
-						width: 72px;
-						height: 72px;
-						stroke-width: 1.2;
-						margin: 0;
-					}
-					.t--w4 .tile__title {
-						margin: 0;
-						min-width: 16rem;
-					}
 				}
 
 				/* ---------------------------------------------------------- about / cluster */
@@ -1154,7 +1138,7 @@
 					box-shadow: inset 0 0 0 1px var(--line);
 				}
 				.cluster__gauge {
-					max-width: 400px;
+					max-width: 320px;
 					margin: 0 auto;
 				}
 				.gauge {
@@ -1264,10 +1248,6 @@
 					border: 1px solid rgba(225, 29, 46, 0.5);
 					background: radial-gradient(circle, rgba(225, 29, 46, 0.22), transparent 70%);
 					box-shadow: 0 0 22px rgba(225, 29, 46, 0.35);
-					transition:
-						border-color 0.4s,
-						box-shadow 0.4s,
-						background-color 0.4s;
 				}
 				.lamp__ico .ico {
 					width: 26px;
@@ -1277,15 +1257,6 @@
 					stroke-width: 2;
 					stroke-linecap: round;
 					stroke-linejoin: round;
-					transition: stroke 0.4s;
-				}
-				.cluster.is-live .lamp:not(.is-on) .lamp__ico {
-					border-color: rgba(255, 255, 255, 0.14);
-					background: none;
-					box-shadow: none;
-				}
-				.cluster.is-live .lamp:not(.is-on) .ico {
-					stroke: rgba(255, 255, 255, 0.4);
 				}
 				@media (min-width: 640px) {
 					.lamps {
@@ -1599,6 +1570,19 @@
 					background: linear-gradient(var(--line), var(--line)) var(--gut) 0 / calc(100% - 2 * var(--gut)) 1px no-repeat;
 					font-size: 0.875rem;
 					color: var(--muted);
+				}
+				.ftr__legal a {
+					color: var(--soft);
+					text-decoration: underline;
+					text-decoration-color: var(--line);
+					text-underline-offset: 3px;
+					transition:
+						color 0.2s,
+						text-decoration-color 0.2s;
+				}
+				.ftr__legal a:hover {
+					color: #fff;
+					text-decoration-color: var(--racing);
 				}
 
 				/* ---------------------------------------------------------- motion */
@@ -2051,13 +2035,6 @@
 								<p class="tile__text">Personnalisation esthétique et ajustements légers selon votre projet.</p>
 							</div>
 						</article>
-						<article class="tile t--w4">
-							<div class="tile__in">
-								<svg class="ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 33V11h26v22"/><path pathLength="1" d="M29 33V17h9l6 7v9"/><path pathLength="1" d="M33 17v7h10"/><path pathLength="1" d="M3 33h3M14 33h18M40 33h4"/><circle pathLength="1" cx="10" cy="35" r="4"/><circle pathLength="1" cx="36" cy="35" r="4"/></svg>
-								<h3 class="tile__title">Mécanique poids lourd</h3>
-								<p class="tile__text">Entretien et interventions mécaniques sur véhicules poids lourds.</p>
-							</div>
-						</article>
 					</div>
 				</div>
 			</section>
@@ -2248,7 +2225,7 @@
 					</p>
 				</div>
 			</div>
-			<p class="wrap ftr__legal">© 2026 Mav<span class="dot">.</span> RS Auto. Tous droits réservés. Site par Hugo Eribon.</p>
+			<p class="wrap ftr__legal">© 2026 Mav<span class="dot">.</span> RS Auto. Tous droits réservés. Site par <a href="https://hugoeribon.fr" target="_blank" rel="noopener">Hugo Eribon</a>.</p>
 		</footer>
 
 		<script>
@@ -2455,39 +2432,28 @@
 						heroObserver.observe(document.querySelector(".hero__fig"));
 						sync();
 
-						// About: needle sweeps the scale, lights the four lamps, settles on 100
-						const cluster = document.querySelector(".cluster");
-						const needle = cluster.querySelector(".g-needle");
-						const arcs = cluster.querySelectorAll(".g-val, .g-val-glow");
-						const readout = cluster.querySelector(".g-read");
-						const lamps = [...cluster.querySelectorAll(".lamp")];
-						const thresholds = [40, 80, 120, 160];
+						// About: needle follows the scroll, climbing to 180 then easing back to 100
+						const gauge = document.querySelector(".cluster__gauge");
+						const needle = gauge.querySelector(".g-needle");
+						const arcs = gauge.querySelectorAll(".g-val, .g-val-glow");
+						const readout = gauge.querySelector(".g-read");
 						const state = { v: 0 };
-						let settled = false;
 						const render = () => {
 							const v = state.v;
 							needle.setAttribute("transform", `rotate(${135 + v * 1.5} 200 200)`);
 							arcs.forEach((arc) => (arc.style.strokeDashoffset = String(1 - v / 180)));
 							readout.textContent = String(Math.round(v));
-							lamps.forEach((lamp, k) => lamp.classList.toggle("is-on", settled || v >= thresholds[k]));
 						};
-						cluster.classList.add("is-live");
 						render();
-						const sweep = gsap.timeline({
-							scrollTrigger: { trigger: cluster, start: "top 80%", end: "bottom 55%", scrub: 0.8 },
-							onUpdate: () => {
-								settled = sweep.progress() >= 0.7;
-								render();
-							},
-						});
-						sweep.to(state, { v: 180, duration: 0.7, ease: "power1.in" }).to(state, { v: 100, duration: 0.3, ease: "power2.out" });
+						gsap
+							.timeline({ scrollTrigger: { trigger: gauge, start: "top 85%", end: "bottom 25%", scrub: 0.6 }, onUpdate: render })
+							.to(state, { v: 180, duration: 0.6, ease: "sine.inOut" })
+							.to(state, { v: 100, duration: 0.4, ease: "sine.inOut" });
 
 						return () => {
 							heroObserver.disconnect();
 							playBtn.removeEventListener("click", onPlay);
 							playBtn.hidden = true;
-							cluster.classList.remove("is-live");
-							lamps.forEach((lamp) => lamp.classList.remove("is-on"));
 							needle.setAttribute("transform", "rotate(285 200 200)");
 							arcs.forEach((arc) => (arc.style.strokeDashoffset = ""));
 							readout.textContent = "100";
